@@ -1,0 +1,65 @@
+\documentclass[12pt,oneside]{article}
+
+\input{content/preamble}
+
+\usepackage[a-1b]{pdfx}
+
+\begin{document}
+
+%%  Front matter
+\input{content/titlepage}
+\clearpage
+
+\lhead{}
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\clearpage
+\input{content/abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
+\clearpage
+
+%%  Main matter
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\lhead{\nouppercase{\leftmark}}
+
+\clearpage
+\input{content/01_introduction}
+
+\clearpage
+\input{content/02_fundamentals/fundamentals}
+
+\clearpage
+\input{content/03_methodology/methodology}
+
+\clearpage
+\input{content/04_experiments}
+
+\clearpage
+\input{content/05_discussion}
+
+\clearpage
+\input{content/06_conclusion}
+
+%%  Bibliography
+\clearpage
+\printbibliography
+
+%%  Appendix
+\appendix
+%% \input{content/appendix}
+
+\clearpage
+\input{content/ai_documentation}
+
+\clearpage
+\input{content/declaration}
+
+\end{document}

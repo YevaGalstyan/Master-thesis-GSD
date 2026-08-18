@@ -1,0 +1,47 @@
+\newcommand{\todom}[1]{\marginpar{\parbox{1.5cm}{\textcolor{red}{TODO:\\ #1}}}}
+
+\newcommand{\HSFTitle}[8]{
+
+  \thispagestyle{empty}
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{assets/logo_new_2.png} \\
+    \vspace*{\stretch{1}}
+    \end{center}
+
+  %\vspace*{\stretch{1}}
+  {\parindent0cm
+  \rule{\linewidth}{.7ex}}
+  \begin{center}
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\Huge
+    #1\\
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\large
+    #3
+    \vspace*{\stretch{1}}
+  \end{center}
+  \rule{\linewidth}{.7ex}
+
+  \vspace*{\stretch{2}}
+  \begin{center}
+    \Large #2, #5, Fulda University of Applied Sciences \\
+    \vspace*{\stretch{1}}
+
+    \large Matriculation number:  #4 \\[1mm]
+    \large Supervisor:  #7 \\[1mm]
+    \large Co-supervisor:  #8 \\[1mm]
+
+    \vspace*{\stretch{1}}
+    \large Submitted on #6
+  \end{center}
+}
+
+\HSFTitle
+      { Synthetic Price Path Generation for European Gas Markets Using Generative Adversarial Networks with Applications to Option Pricing }
+      {Master's Thesis}
+      {Yeva Galstyan}         
+      {1507481}
+      {Department of Applied Computer Science}  
+      {September 15, 2026}        
+      {Prof. Dr. Christoph Scheich}     
+      {Dr. Alexander Jungwirth }    

@@ -1,0 +1,56 @@
+% Encoding and fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=authoryear, maxcitenames=2]{biblatex}
+\addbibresource{literatur.bib}
+
+% Layout and structure
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{acronym}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage[numbib]{tocbibind}
+\usepackage[bookmarks]{hyperref}
+\usepackage{url}
+
+% Maths and algorithms
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ruled,longend]{algorithm2e}
+\usepackage{listings}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{siunitx}
+\sisetup{
+  group-separator = {,},
+  group-minimum-digits = 4,
+  detect-all,
+}
+
+% Figures and tables
+\usepackage[pdftex]{graphicx}
+\graphicspath{{assets/}}
+\usepackage[justification=centering]{caption}
+\usepackage[hypcap=true,labelformat=simple]{subcaption}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\usepackage{booktabs} 
+
+% Layout corrections
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+\clubpenalty = 10000 
+
+% Header / footer
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\setlength{\headheight}{16pt}
+
+% Helper commands
+\usepackage{xcolor}
+\usepackage{xspace}
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}

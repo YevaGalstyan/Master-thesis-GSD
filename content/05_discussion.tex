@@ -1,0 +1,120 @@
+\section{Discussion}
+\todo{Limitations: a two-return construction was possible from opening and settlement prices but not pursued — returns would need aggregating back to daily for the Monte Carlo, and would mix a traded price with an exchange mark.}
+
+% # Ch5 — Fu et al. (2019) as external support for the distributional failure
+
+% **Source:** Fu, Chen, Zeng, Zhuang, Sudjianto (2019), *Time Series Simulation by
+% Conditional Generative Adversarial Net*, arXiv:1904.11419. Wells Fargo Corporate
+% Model Risk. Preprint, not peer-reviewed — use as corroboration, not primary
+% authority.
+
+% **Why it matters:** gives two mechanisms for thin tails and absent volatility
+% clustering that are *independent of FinGAN's loss function*. Shifts the
+% contribution from "the economics-driven terms do not transfer to TTF" toward
+% "the distributional failure has architectural and sample-size roots that no loss
+% combination was going to fix." Consistent with the ablation result that no loss
+% combination reliably beats ForGAN.
+
+% ---
+
+% ## Mechanism 1 — Small samples break higher moments
+
+% **Their finding.** CGAN trained on a 2-dim VAR(1) with Student-t noise (DF=20).
+% At n = 1,000 the generated excess kurtosis was systematically underestimated,
+% in some cases falling *below* the true value — tails too thin. Repeated at
+% n = 20,000: kurtosis matched. Their stated conclusion is that CGAN training is
+% affected by training sample size, especially for capturing higher-order moments.
+
+% **Link to our results.** Training set is a fraction of 3,998 trading days.
+% Two identical l=10 runs gave excess kurtosis −0.17 and 0.60 — near zero,
+% occasionally negative. Same failure mode, same direction.
+
+% **How to state it.** As consistent supporting evidence, not proof. Their setup
+% is a synthetic bivariate VAR with a one-lag condition; ours is a univariate
+% commodity return series with a ten-lag condition. The mechanism transfers, the
+% numbers do not.
+
+% **Careful:** do not let this collapse into "we just needed more data." TTF has
+% existed since 2010 and the sample is what the market provides. The honest claim
+% is that the data requirement of the method exceeds what this market can supply —
+% which is itself a finding about applying FinGAN to commodities.
+
+% ---
+
+% ## Mechanism 2 — The condition variable may be the wrong one
+
+% **The argument.** GARCH-type series have weak dependence in the mean and strong
+% dependence in the variance. Fu et al. observe that conditioning on past *levels*
+% feeds the network the quantity carrying little information, while the
+% informative quantity — recent volatility — must be inferred. They tested
+% conditioning directly on sigma_t^2 against conditioning on sigma_{t-1}^2 and
+% found the former clearly better, and concluded that the choice of condition
+% matters.
+
+% **Link to our results.** Our condition is ten past log returns — levels, not
+% volatility. Gives a mechanistic reason for weak volatility clustering that does
+% not depend on the loss function at all.
+
+% **Also explains the l=30 result.** Lengthening the window introduced some
+% clustering and increased kurtosis, but worsened scale (std dropped). Under this
+% reading, l=30 helps because a longer window makes recent volatility easier to
+% infer — not because more history is better per se. Consistent with the earlier
+% finding that l=30 is a trade-off rather than a uniform improvement.
+
+% **Narrative hinge to 2.5.3.** Fu et al. list, as future work, adding LSTM layers
+% to the generator so it can extract historical volatility automatically. That is
+% what ForGAN already does. So the LSTM is not incidental architecture — it is the
+% component expected to recover the volatility structure that raw level
+% conditioning leaves implicit. Our results suggest it does not do so
+% sufficiently on TTF. Worth stating explicitly: this is the mechanism the
+% architecture was supposed to provide, and it underdelivered.
+
+% ---
+
+% ## Proposed ablation — realised volatility in the condition vector
+
+% Structurally identical to the planned seasonality test (append features to the
+% condition vector), so implementation cost is low.
+
+% - Append a realised-volatility measure (e.g. rolling std of the last l returns)
+%   to the condition alongside the returns.
+% - Compare volatility clustering and kurtosis against the l=10 baseline.
+% - Multi-seed, mean ± std — single runs are not defensible.
+
+% **Both outcomes are useful.**
+% - Clustering appears → mechanism demonstrated rather than asserted. Strongest
+%   version of the Ch5 argument.
+% - Clustering does not appear → the limitation is deeper than condition design,
+%   strengthening the architectural reading. Also a clean statement of what would
+%   need to change for the method to work on this market.
+
+% **Priority:** below the parametric benchmarks and the market option pricing
+% benchmark. Nice-to-have. If time runs short, the argument can be made from
+% Fu et al. plus the existing l=10 / l=30 comparison without running it — state
+% it as a proposed test in future work.
+
+% ---
+
+% ## Where this lands in the chapter
+
+% Belongs in the section explaining *why* the distributional failures occurred,
+% before the option pricing consequences. Sequence:
+
+% 1. What failed (from Ch4): fat tails, clustering, skew.
+% 2. Why — three mechanisms:
+%    a. Loss-term tension: MSE and SR are variance-shrinking by construction;
+%       only the adversarial term targets distribution matching. Vuletić et al.
+%       observed narrow distributions from these terms themselves.
+%    b. Sample size limits on higher moments (Fu et al.).
+%    c. Condition carries level information, not volatility information
+%       (Fu et al.).
+% 3. Consequence: thin tails → too little mass far from the money → systematic
+%    OTM underpricing.
+
+% Mechanisms (a) and (c) are the strongest because they are structural and
+% supported by both papers. (b) is real but weakest, since it invites the "get
+% more data" response.
+
+% **Citation key:** `fu2019time`
+
+\todo{Since each condition appears once in the data with a single realized target, the empirical conditional distribution is a point mass. \textcite{vuleticFinGANForecastingClassifying2024} note that forecasts close to the target therefore receive high scores from the discriminator, which encourages mode collapse in a classical GAN setup}
