@@ -46,12 +46,12 @@ in Sec.~\ref{sec:pricing-setup}.
     x_t = \log\!\left(\frac{P_t}{P_{t-1}}\right),
 \end{equation}
 where $P_t$ is the front-month settlement price on trading day $t$.
-The transformation gives 3.997 return observations.
+The transformation gives \num{3997} return observations.
 
-\subsubsection{Data Split}
+\subsubsection{Data Split}\label{sec:data-split}
 The return series was split chronologically into training (80\%), validation (10\%), and test (10\%) sets using the proportions of \parencite{vuleticFinGANForecastingClassifying2024}. Training covers 2010-01-05 to 2023-01-18
-(\num{3197} returns), validation 2023-01-19 to 2024-09-04 (\num{399} returns), and test
-2024-09-05 to 2026-04-24 (401 returns). The chronological split was explicitly used to avoid look-ahead bias. Following the current split, the 2021 to 2022 price disruption discussed in Sec.~\ref{sec:gas-markets} falls entirely within the training period, while the validation and test periods correspond to a calmer period, as seen in Figure ~\ref{fig:ttf-price-split}.
+validation 2023-01-19 to 2024-09-04 (\num{399} returns), and test
+2024-09-05 to 2026-04-24 (\num{401} returns). The chronological split was explicitly used to avoid look-ahead bias. Following the current split, the 2021 to 2022 price disruption discussed in Sec.~\ref{sec:gas-markets} falls entirely within the training period. The validation period is calm, while the 2026 disruption falls entirely within the test period, as seen in Figure~\ref{fig:ttf-price-split}.
 
 Sliding window matrices were constructed for each split separately, so that no window spans a split boundary. The window was moved forward by one trading day.
 

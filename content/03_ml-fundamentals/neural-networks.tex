@@ -1,0 +1,37 @@
+\subsection{Neural Networks}\label{sec:nn}
+\todo{TODO (2.5 lead-in, before 2.5.1): 0. neuron as weighted sum plus
+activation, layer, weights and biases as learnable parameters
+$\theta$, forward pass, ReLU and sigmoid (forward pointer to 3.2.1
+where both are used), width/hidden size as capacity. Two short
+paragraphs, no figure.}
+\subsubsection{Training}\label{sec:nn-training}
+
+\todo{TODO: 1. supervised vs. unsupervised learning, labeled target vs.
+learning a distribution from samples -- needed for 2.6.1 (generative
+modeling is unsupervised) and 2.6.4 (Vuleti\'c et al. classify
+Fin-GAN as supervised) 2. cost function, then cross-entropy as the
+loss for binary classification -- consumed directly by Eq. 5 3.
+gradient, gradient descent, gradient norm -- the norm is required for
+the matching procedure in 2.6.4 and for $\alpha,\beta,\gamma,\delta$
+in 3.2.2 4. optimizer and learning rate, RMSProp in two sentences,
+value 0.0001 used in 3.2.2 5. minibatch and epoch; state explicitly
+that an epoch is one full pass over the training data, so that
+$n_{\mathrm{grad}} + n_{\mathrm{epochs}}$ in 3.2.2 reads as the
+effective training length 6. weight initialization, normal Xavier and
+He, one sentence each with existing citations -- needed for the mode
+collapse discussion in 2.6.4 7. hyperparameter vs. learnable
+parameter, and capacity/under-training -- load-bearing for the
+$R_G$ finding in Ch. 4 and the collapse explanation in Ch. 5}
+
+\subsubsection{Recurrent Neural Networks and LSTM}\label{sec:rnn}
+
+\todo{TODO: 1. why a feedforward network cannot process an ordered
+sequence, hidden state carried across time steps, final hidden state
+as a fixed-length vector representation of the sequence -- this is
+what 2.6.3 means by the recurrent layer processing $c$ 2. vanishing
+gradients over long sequences, one or two sentences 3. LSTM cell
+state and gates, kept qualitative, cite Hochreiter and Schmidhuber
+(1997) 4. hidden size $R$ as the width of the recurrent layer, tying
+back to capacity in 2.5.1 and forward to $R_G$ and $R_D$ in 3.2.1
+5. brief GRU mention only, since ForGAN permits it but LSTM is used
+throughout -- forward pointer to 2.6.3 Forward pointer: applied in 2.6.3 and 3.2.1; capacity varied in 3.3.}

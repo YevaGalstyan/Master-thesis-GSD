@@ -1,0 +1,46 @@
+\subsection{Experimental Design}\label{sec:configurations}
+
+As described in Sec.~\ref{sec:fin-gan}, the eight cost function combinations of \textcite{vuleticFinGANForecastingClassifying2024} were used:
+$\mathrm{PnL}^{*}_{a}$;
+$\mathrm{SR}^{*}$;
+$\mathrm{PnL}^{*}_{a}$ \& $\mathrm{MSE}$;
+$\mathrm{PnL}^{*}_{a}$ \& $\mathrm{SR}^{*}$;
+$\mathrm{PnL}^{*}_{a}$ \& $\mathrm{STD}$;
+$\mathrm{SR}^{*}$ \& $\mathrm{MSE}$;
+$\mathrm{PnL}^{*}_{a}$ \& $\mathrm{MSE}$ \& $\mathrm{SR}^{*}$;
+$\mathrm{PnL}^{*}_{a}$ \& $\mathrm{MSE}$ \& $\mathrm{STD}$. 
+
+A ninth combination, using only the $\mathrm{MSE}$, was added as a supervised counterpart to ForGAN. A tenth branch was trained on cross-entropy alone, giving the ForGAN baseline. Each combination was trained under several configurations, listed in Table~\ref{tab:configurations}. 
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Configuration & $l$ & $N$ & $R_G$ & $R_D$ & $n_{\text{grad}} + n_{\text{epochs}}$ \\
+\midrule
+1  & 10 & 8  & 8  & 8  & $25 + 100$   \\
+2  & 10 & 8  & 8  & 8  & $100 + 500$  \\
+3  & 10 & 32 & 8  & 8  & $100 + 500$  \\
+4  & 10 & 8  & 8  & 64 & $100 + 500$  \\
+5  & 10 & 32 & 8  & 64 & $100 + 500$  \\
+6  & 30 & 32 & 8  & 64 & $100 + 500$  \\
+7  & 10 & 32 & 8  & 64 & $100 + 1500$ \\
+8  & 10 & 32 & 64 & 64 & $100 + 500$  \\
+9  & 10 & 32 & 64 & 64 & $100 + 1500$ \\
+10 & 10 & 8  & 64 & 64 & $100 + 500$  \\
+\bottomrule
+\end{tabular}
+\caption{Model configurations.}
+\label{tab:configurations}
+\end{table}
+
+The configurations differ in one parameter at a time, to isolate the effect of each change.
+The first configuration is the reference configuration, following the values and the schedule of Algorithm 1 in \textcite{vuleticFinGANForecastingClassifying2024}. 
+The second configuration tests whether a longer training period improves the distributional quality. 
+The third and fourth configurations increase $N$ and $R_D$ separately. 
+The fifth configuration increases both, matching the default values of the published implementation. 
+The sixth configuration tests whether a longer conditional window of 30 trading days carries more information about the volatility of the series. 
+The seventh configuration extends the training further. The eighth configuration increases $R_G$. $R_G$ is not varied in the paper or in the published implementation. The ninth configuration combines the longer training with the increased $R_G$. Lastly, the tenth configuration combines the increased $R_G$ with the original $N$.
+An additional test run was performed with the scaling parameters computed from the entire training split, using configuration 5 of Table~\ref{tab:configurations}.
+
+Each configuration was trained with 5 fixed random seeds. Training runs of the same configuration differ noticeably in their distributional statistics, due to the stochastic nature of the training process. Therefore, all results were reported as means and standard deviations across seeds. Fixing the seeds makes the runs reproducible in the environment described in Sec.~\ref{sec:software}.

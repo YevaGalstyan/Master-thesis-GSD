@@ -1,7 +1,7 @@
 \subsection{Generative Adversarial Networks}
 
-\subsubsection{Basic Generative Adversarial Networks}
-Generative modeling is an unsupervised learning approach. A generative model takes a set of training examples and learns the probability distribution that produced them. Generative Adversarial Networks (GANs) are generative models first introduced by \textcite{goodfellowGenerativeAdversarialNetworks2014}.
+\subsubsection{Basic Generative Adversarial Networks}\label{sec:basic-gan}
+Generative modeling is an unsupervised learning approach. A generative model takes a set of training examples and learns the probability distribution that produced them. GANs are generative models first introduced by \textcite{goodfellowGenerativeAdversarialNetworks2014}.
 GANs have been particularly successful in image and video generation. They have also been used to create synthetic data, for training other machine learning models and to fill in gaps in missing data \parencite{goodfellowGenerativeAdversarialNetworks2020}.
 
 GANs are based on game theory, which studies situations where several decision-makers are present. Each participant chooses an action, and the outcome depends on the choices of all of the participants. A GAN has two decision-makers, \textbf{the generator (G)} and \textbf{the discriminator ($D$)}, typically implemented as neural networks. $G$ takes a vector of random noise as input and generates a sample as output. $D$ takes a real or generated data sample as input and outputs a probability that the input sample is real. The goal of $G$ is to fool $D$ by generating realistic-looking data samples. The goal of $D$ is to distinguish real samples from generated ones.
@@ -22,7 +22,7 @@ J^{(D)}\bigl(\theta_d, \theta_g\bigr)
 
 Learning the zero-sum game minimizes the Jensen-Shannon divergence between $p_{\mathrm{data}}$ and $p_g$. Convergence holds only if both players are updated in function space. In practice, $D$ and $G$ are neural networks and updated in parameter space. $D$ minimizes a cross-entropy while $G$ maximizes the same quantity. Generated samples are rejected with high confidence at the start of training, and the gradient of $G$ vanishes at the point at which it performs worst \parencite{goodfellowNIPS2016Tutorial2017}.
 \clearpage
-Therefore the cost function of $G$ is constructed by flipping the target of the cross-entropy.
+Therefore, the cost function of $G$ is constructed by flipping the target of the cross-entropy.
 
 \begin{equation}
 J^{(G)}(\theta_d, \theta_g)
@@ -80,16 +80,24 @@ $G$ takes a noise vector $z$ and $c$ and outputs a value for the target $x_{t+1}
 
 A full probabilistic distribution of $x_{t+1}$ can be obtained through repeated sampling of $G$ with different noise vectors and the same $c$.
 
-ForGAN adds a recurrent layer to $G$ and $D$. The layer processes $c$ as an ordered sequence and constructs a vector representation. The recurrent layer can be a long short-term memory (LSTM)\parencite{hochreiterLongShortTermMemory1997} or a gated recurrent unit (GRU) \parencite{chungEmpiricalEvaluationGated2014}.
+ForGAN adds a recurrent layer to $G$ and $D$. The layer processes $c$ as an ordered sequence and constructs a vector representation. The recurrent layer can be a long short-term memory (LSTM)\parencite{hochreiterLongShortTermMemory1997} or a gated recurrent unit (GRU)  \parencite{choLearningPhraseRepresentations2014}. The high-level architecture of the ForGAN model is shown in Fig.~\ref{fig:forgan_architecture}.
 
-\subsubsection{Fin-GAN}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/forgan_architecture.pdf}
+  \caption{Structure of a ForGAN}
+  \label{fig:forgan_architecture}
+\end{figure}
+
+\clearpage
+\subsubsection{Fin-GAN}\label{sec:fin-gan}
 Fin-GAN was introduced as an extension of ForGAN \parencite{vuleticFinGANForecastingClassifying2024}. It focuses on the probabilistic forecasting of financial time series, specifically equity returns. The ForGAN architecture and the cost function of $D$ are unchanged. LSTM is chosen as the recurrent layer. 
 
 The motivation behind Fin-GAN is to correctly forecast the sign of the return, since the sign determines whether the trade is profitable. For this purpose, economics-driven terms are introduced into the cost function of $G$. In contrast to the unsupervised setting of standard GANs, \textcite{vuleticFinGANForecastingClassifying2024} classify Fin-GAN as supervised learning.
 
 The terms are defined over a minibatch of $n_{\text{batch}}$ pairs. For each condition in the batch, G produces a forecast $\hat{x}_i$ of the realized value $x_i$. Let $\hat{x}=(\hat{x}_1, \ldots, \hat{x}_{n_{\text{batch}}})$ and $x=(x_1, \ldots, x_{n_{\text{batch}}})$. 
 
-Fin-GAN introduces four economics-driven terms to the cost function of $G$. 
+\textbf{Cost function.} Fin-GAN introduces four economics-driven terms to the cost function of $G$. 
 $J^{(G)}$ can be the zero-sum, cross-entropy or Wasserstein cost function. \textcite{vuleticFinGANForecastingClassifying2024} report that the Wasserstein cost function was numerically unstable during training. Hence
 $J^{(G)}$ is the cross-entropy cost function given in Eq.~\ref{eq:generator-cross}.  The four remaining terms are defined below.
 
@@ -111,7 +119,7 @@ where $k_{\tanh}$ is a hyperparameter that controls the accuracy of the approxim
 
 Although the sign of the forecast is the main interest, forecasting an $\hat{x}_i$ that is close to $x_i$ is also of importance. The mean squared error $\mathrm{MSE}$ measures the squared difference between the forecast and the realized value, averaged over the minibatch.
 
-The Sharpe ratio $\mathrm{SR}$ measures risk-adjusted return and is defined as the mean of the $\mathrm{PnL}^{*}_{a}$ series divided by its standard deviation. 
+The Sharpe ratio $\mathrm{SR}^{*}$ measures risk-adjusted return and is defined as the mean of the $\mathrm{PnL}^{*}_{a}$ series divided by its standard deviation. 
 \begin{equation}
 \mathrm{SR}^{*}(x, \hat{x}) = \frac{\bar{p}}{\sqrt{\dfrac{1}{n_{\text{batch}}} \sum_{i=1}^{n_{\text{batch}}} \left( p_i - \bar{p} \right)^{2}}},
 \label{eq:sharpe-ratio}
@@ -119,9 +127,38 @@ The Sharpe ratio $\mathrm{SR}$ measures risk-adjusted return and is defined as t
 
 where $p_i = \mathrm{PnL}^{*}_{a}(x_i, \hat{x}_i)$ and $\bar{p}$ is its mean over the $n_{\mathrm{batch}}$ forecasts. The standard deviation $\mathrm{STD}$ term is the denominator of Eq.~\ref{eq:sharpe-ratio}. Logically maximizing $\mathrm{SR}^{*}$ is the same as maximizing $\mathrm{PnL}^{*}_{a}$ and minimizing $\mathrm{STD}$ at the same time. As a result, including all three terms in $L^{G}$ is redundant. However, during training $\mathrm{SR}^{*}$ and the combination of $\mathrm{PnL}^{*}_{a}$ and $\mathrm{STD}$ produce different gradients \parencite{vuleticFinGANForecastingClassifying2024}.
 
-All of the terms above are measured in different units, hence they produce incomparable gradients. As a solution, four additional hyperparameters $\alpha$, $\beta$, $\gamma$, $\delta$ are introduced. Fin-GAN is first trained on $J^{(G)}$ only, and gradient norms of other terms are calculated. Each hyperparameter is the mean of the ratios between the cross-entropy gradient norms and the gradient norms of the corresponding term.
+\textbf{Gradient matching.} All the terms above are measured in different units, hence they produce incomparable gradients. As a solution, four additional hyperparameters $\alpha$, $\beta$, $\gamma$, $\delta$ are introduced. Fin-GAN is first trained on $J^{(G)}$ only, and gradient norms of other terms are calculated. Each hyperparameter is the mean of the ratios between the cross-entropy gradient norms and the gradient norms of the corresponding term.
 Large values of $\alpha$, $\beta$, $\gamma$, $\delta$ make the feedback of $D$ insignificant and move the model towards supervised learning, but small values leave it in the standard GAN setting.
 
-If the term is not included in the objective, the hyperparameter is set to zero. Several versions of $L^{G}$ can be constructed from different combinations of terms. Only combinations that include economics-driven terms are considered for Fin-GAN. \textcite{vuleticFinGANForecastingClassifying2024} train eight such versions and select the combination with the highest Sharpe ratio on the validation set. Then, the selected $G$ is evaluated on the test set.
+If the term is not included in the objective, the hyperparameter is set to zero. Several versions of $L^{G}$ can be constructed from different combinations of terms. Only combinations that include economics-driven terms are considered for Fin-GAN. \textcite{vuleticFinGANForecastingClassifying2024} train eight such versions and select the combination with the highest Sharpe ratio $\mathrm{SR}_{w}$ on the validation set. Then, the selected $G$ is evaluated on the test set.
 
+\textbf{Mode collapse.} \textcite{vuleticFinGANForecastingClassifying2024} distinguish two types of mode collapse for time series. Distributional mode collapse happens 
+when $G$ generates nearly identical samples for a single condition. 
+Mean mode collapse happens when the means of the generated
+distributions are nearly identical across all conditions.
+Both are identified by a standard deviation below a threshold $\epsilon=0.0002$. Fin-GAN uses normal Xavier initialization \parencite{xavier-init}, since ForGAN suffered mode collapse in 67\% of runs under He initialization \parencite{heDelvingDeepRectifiers2015}. However, no mode collapse happened with the economic-driven, under either initializations.
 
+\textbf{Weighted strategy.} The Sharpe ratio $\mathrm{SR}_{w}$ is not to be confused with the
+$\mathrm{SR}^{*}$ term of Eq.~\ref{eq:sharpe-ratio}. $\mathrm{SR}_{w}$
+is computed over a full data split on $\mathrm{wPnL}$. $\mathrm{SR}_{w}$ measures the directional accuracy of the forecasts and not the shape of the generated distribution. For each condition, $B$ samples are drawn from $G$ with different noise vectors. 
+
+\begin{equation}
+    \label{eq:wpnl-trade}
+    \mathrm{wPnL}^{i}_{2} = 10000 \left( p^{i}_{u} - p^{i}_{d} \right) x_i ,
+\end{equation}
+
+where $p^{i}_{u}$ and $p^{i}_{d}$ are the fractions of non-negative and negative samples. \textcite{vuleticFinGANForecastingClassifying2024} use $B = 1000$. Since the equity data uses two returns per day, intraday and overnight, two positions are taken per day. The $\mathrm{wPnL}^{i}$ series is 
+the sum of the two $\mathrm{wPnL}^{i}_{2}$ values per day. The Sharpe ratio $\mathrm{SR}_{w}$ is then
+
+\begin{equation}
+    \label{eq:sharpe-weighted}
+    \mathrm{SR}_{w} = \sqrt{252} \,
+    \frac{\overline{\mathrm{wPnL}}}
+         {\left( \dfrac{1}{\lfloor n/2 \rfloor}
+          \sum_{i=1}^{\lfloor n/2 \rfloor}
+          \left( \mathrm{wPnL}^{i} - \overline{\mathrm{wPnL}} \right)^{2}
+          \right)^{1/2}} ,
+    \text{ where }
+    \overline{\mathrm{wPnL}} = \frac{1}{\lfloor n/2 \rfloor}
+        \sum_{i=1}^{\lfloor n/2 \rfloor} \mathrm{wPnL}^{i} .
+\end{equation}

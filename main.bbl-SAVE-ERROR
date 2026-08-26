@@ -1,0 +1,1186 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{arjovskyWassersteinGAN2017}{online}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=ab4a5e058dea2d852ff02aa4e10045c3}{%
+           family={Arjovsky},
+           familyi={A\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8ef51a0906e47d2b4472c4e714ed598f}{%
+           family={Chintala},
+           familyi={C\bibinitperiod},
+           given={Soumith},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac762f2592005edf6bad58f566967c6c}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={Léon},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c0253375e3f94eb82dddef2732bbe5a4}
+      \strng{fullhash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{fullhashraw}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{bibnamehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authorbibnamehash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authornamehash}{c0253375e3f94eb82dddef2732bbe5a4}
+      \strng{authorfullhash}{f587dda04e83e5dc90f2168faf0f4796}
+      \strng{authorfullhashraw}{f587dda04e83e5dc90f2168faf0f4796}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a new algorithm named WGAN, an alternative to traditional GAN training. In this new model, we show that we can improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches. Furthermore, we show that the corresponding optimization problem is sound, and provide extensive theoretical work highlighting the deep connections to other distances between distributions.}
+      \field{day}{6}
+      \field{eprintclass}{stat.ML}
+      \field{eprinttype}{arXiv}
+      \field{month}{12}
+      \field{pubstate}{prepublished}
+      \field{title}{Wasserstein {{GAN}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1701.07875
+      \endverb
+      \verb{eprint}
+      \verb 1701.07875
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/DIZ4VNIH/Arjovsky et al. - 2017 - Wasserstein GAN.pdf;/Users/U10119050/Zotero/storage/5KNQHQRF/1701.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1701.07875
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1701.07875
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{barshaIndepthReviewAnalysis2025}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=43d063bf83199bb302b8a69641bd2b19}{%
+           family={Barsha},
+           familyi={B\bibinitperiod},
+           given={Farhat\bibnamedelima Lamia},
+           giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ce18bc87fce71f3a37eaf41aa360c10d}{%
+           family={Eberle},
+           familyi={E\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{fullhash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{fullhashraw}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{bibnamehash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{authorbibnamehash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{authornamehash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{authorfullhash}{c3a75c350adfe6030a9a24ab810f065f}
+      \strng{authorfullhashraw}{c3a75c350adfe6030a9a24ab810f065f}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0885-6125, 1573-0565}
+      \field{journaltitle}{Machine Learning}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shortjournal}{Mach Learn}
+      \field{title}{An In-Depth Review and Analysis of Mode Collapse in Generative Adversarial Networks}
+      \field{urlday}{14}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{114}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{141}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/s10994-025-06772-7
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/63XJPY4G/Barsha and Eberle - 2025 - An in-depth review and analysis of mode collapse in generative adversarial networks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s10994-025-06772-7
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s10994-025-06772-7
+      \endverb
+    \endentry
+    \entry{brownWhatDrivesNatural2008}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=23242eac66da2b80efdb2edfa039269e}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Stephen\bibnamedelima P.A.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ee9b95c88f890cfe0511c776106bd64}{%
+           family={Yücel},
+           familyi={Y\bibinitperiod},
+           given={Mine\bibnamedelima K.},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4a367a1722920e2930fcc18742c79280}
+      \strng{fullhash}{4a367a1722920e2930fcc18742c79280}
+      \strng{fullhashraw}{4a367a1722920e2930fcc18742c79280}
+      \strng{bibnamehash}{4a367a1722920e2930fcc18742c79280}
+      \strng{authorbibnamehash}{4a367a1722920e2930fcc18742c79280}
+      \strng{authornamehash}{4a367a1722920e2930fcc18742c79280}
+      \strng{authorfullhash}{4a367a1722920e2930fcc18742c79280}
+      \strng{authorfullhashraw}{4a367a1722920e2930fcc18742c79280}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{For many years, fuel switching between natural gas and residual fuel oil kept natural gas prices closely aligned with those for crude oil. More recently, however, the number of U.S. facilities able to switch between natural gas and residual fuel oil has declined, and over the past seven years, U.S. natural gas prices have been on an upward trend with crude oil prices but with considerable independent movement. Natural gas market analysts generally emphasize weather and inventories as drivers of natural gas prices. Using an error-correction model, we show that when these and other additional factors are taken into account, movements in crude oil prices have a prominent role in shaping natural gas prices. Our findings imply a continuum of prices at which natural gas and petroleum products are substitutes.}
+      \field{issn}{0195-6574, 1944-9089}
+      \field{journaltitle}{The Energy Journal}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shortjournal}{The Energy Journal}
+      \field{title}{What {{Drives Natural Gas Prices}}?}
+      \field{urlday}{12}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{29}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{45\bibrangedash 60}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.5547/ISSN0195-6574-EJ-Vol29-No2-3
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/9WRHGCES/Brown and Yücel - 2008 - What Drives Natural Gas Prices.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.sagepub.com/doi/10.5547/ISSN0195-6574-EJ-Vol29-No2-3
+      \endverb
+      \verb{url}
+      \verb https://journals.sagepub.com/doi/10.5547/ISSN0195-6574-EJ-Vol29-No2-3
+      \endverb
+    \endentry
+    \entry{choLearningPhraseRepresentations2014}{online}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=3da7501a79d9346572c7fd6e41b615df}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Kyunghyun},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,useprefix=false,hash=d27fe3f9898ba01eeca28e3bd205f9ea}{%
+           family={Merrienboer},
+           familyi={M\bibinitperiod},
+           given={Bart},
+           giveni={B\bibinitperiod},
+           givenun=0,
+           prefix={van},
+           prefixi={v\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=2adc0c92c308f233c731321d55efe58f}{%
+           family={Gulcehre},
+           familyi={G\bibinitperiod},
+           given={Caglar},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6d80adec79a13a33e73215c5f46f1605}{%
+           family={Bahdanau},
+           familyi={B\bibinitperiod},
+           given={Dzmitry},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6deedc795e51da1bc7fd6289ab321a48}{%
+           family={Bougares},
+           familyi={B\bibinitperiod},
+           given={Fethi},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=449689e8c1ced50f608244e3a96fe6d3}{%
+           family={Schwenk},
+           familyi={S\bibinitperiod},
+           given={Holger},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{fullhash}{93de344d8644049cc7e61f1b9095d310}
+      \strng{fullhashraw}{93de344d8644049cc7e61f1b9095d310}
+      \strng{bibnamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authorbibnamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authornamehash}{9b1920db887fe0d658725c1e606b61f4}
+      \strng{authorfullhash}{93de344d8644049cc7e61f1b9095d310}
+      \strng{authorfullhashraw}{93de344d8644049cc7e61f1b9095d310}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we propose a novel neural network model called RNN Encoder-Decoder that consists of two recurrent neural networks (RNN). One RNN encodes a sequence of symbols into a fixed-length vector representation, and the other decodes the representation into another sequence of symbols. The encoder and decoder of the proposed model are jointly trained to maximize the conditional probability of a target sequence given a source sequence. The performance of a statistical machine translation system is empirically found to improve by using the conditional probabilities of phrase pairs computed by the RNN Encoder-Decoder as an additional feature in the existing log-linear model. Qualitatively, we show that the proposed model learns a semantically and syntactically meaningful representation of linguistic phrases.}
+      \field{day}{3}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{pubstate}{prepublished}
+      \field{title}{Learning {{Phrase Representations}} Using {{RNN Encoder-Decoder}} for {{Statistical Machine Translation}}}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1406.1078
+      \endverb
+      \verb{eprint}
+      \verb 1406.1078
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/B89DV9GM/Cho et al. - 2014 - Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation.pdf;/Users/U10119050/Zotero/storage/2VPZWS8K/1406.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1406.1078
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1406.1078
+      \endverb
+      \keyw{Computer Science - Computation and Language,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning}
+    \endentry
+    \entry{contEmpiricalPropertiesAsset2001}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ec6844791e18e5180eab6fc79d47ff67}{%
+           family={Cont},
+           familyi={C\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{fullhash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{fullhashraw}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{bibnamehash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{authorbibnamehash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{authornamehash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{authorfullhash}{ec6844791e18e5180eab6fc79d47ff67}
+      \strng{authorfullhashraw}{ec6844791e18e5180eab6fc79d47ff67}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1469-7688, 1469-7696}
+      \field{journaltitle}{Quantitative Finance}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Quantitative Finance}
+      \field{shorttitle}{Empirical Properties of Asset Returns}
+      \field{title}{Empirical Properties of Asset Returns: Stylized Facts and Statistical Issues}
+      \field{urlday}{22}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{1}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{223\bibrangedash 236}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1080/713665670
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/6GJC4N59/Cont - 2001 - Empirical properties of asset returns stylized facts and statistical issues.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.tandfonline.com/doi/abs/10.1080/713665670
+      \endverb
+      \verb{url}
+      \verb http://www.tandfonline.com/doi/abs/10.1080/713665670
+      \endverb
+    \endentry
+    \entry{MCM-euro-commision}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a1b813a6e85874b4c945aec2cdbea74c}{%
+           family={{European Commission}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {European Commission}%
+      }
+      \list{location}{1}{%
+        {Brussels}%
+      }
+      \strng{namehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{bibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorbibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authornamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{month}{11}
+      \field{number}{QANDA/22/7066}
+      \field{title}{Questions and {{Answers}} on the Gas Market Correction Mechanism}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ec.europa.eu/commission/presscorner/detail/en/qanda_22_7066
+      \endverb
+      \verb{url}
+      \verb https://ec.europa.eu/commission/presscorner/detail/en/qanda_22_7066
+      \endverb
+    \endentry
+    \entry{xavier-init}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0b3943c3bfdbb5867b3760f7c7d488c2}{%
+           family={Glorot},
+           familyi={G\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{fullhash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{fullhashraw}{02af15243279c938a0a5ca766835bcd4}
+      \strng{bibnamehash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{authorbibnamehash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{authornamehash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{authorfullhash}{02af15243279c938a0a5ca766835bcd4}
+      \strng{authorfullhashraw}{02af15243279c938a0a5ca766835bcd4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research - Proceedings Track}
+      \field{title}{Understanding the Difficulty of Training Deep Feedforward Neural Networks}
+      \field{volume}{9}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{pages}{249\bibrangedash 256}
+      \range{pages}{8}
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/587K45M9/Glorot and Bengio - 2010 - Understanding the difficulty of training deep feedforward neural networks.pdf
+      \endverb
+    \endentry
+    \entry{goodfellowNIPS2016Tutorial2017}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{fullhash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{fullhashraw}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{bibnamehash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{authorbibnamehash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{authornamehash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{authorfullhash}{5d2585c11210cf1d4512e6e0a03ec315}
+      \strng{authorfullhashraw}{5d2585c11210cf1d4512e6e0a03ec315}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This report summarizes the tutorial presented by the author at NIPS 2016 on generative adversarial networks (GANs). The tutorial describes: (1) Why generative modeling is a topic worth studying, (2) how generative models work, and how GANs compare to other generative models, (3) the details of how GANs work, (4) research frontiers in GANs, and (5) state-of-the-art image models that combine GANs with other methods. Finally, the tutorial contains three exercises for readers to complete, and the solutions to these exercises.}
+      \field{day}{3}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{month}{4}
+      \field{pubstate}{prepublished}
+      \field{shorttitle}{{{NIPS}} 2016 {{Tutorial}}}
+      \field{title}{{{NIPS}} 2016 {{Tutorial}}: {{Generative Adversarial Networks}}}
+      \field{urlday}{14}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1701.00160
+      \endverb
+      \verb{eprint}
+      \verb 1701.00160
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/7ZZPYJG5/Goodfellow - 2017 - NIPS 2016 Tutorial Generative Adversarial Networks.pdf;/Users/U10119050/Zotero/storage/TQXV6EZ6/1701.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1701.00160
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1701.00160
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{goodfellowGenerativeAdversarialNetworks2020}{article}{}{}
+      \name{author}{8}{ul=1}{%
+        {{un=1,uniquepart=given,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=a341d25f80a8118cdbb90b272adc8b4f}{%
+           family={Pouget-Abadie},
+           familyi={P\bibinithyphendelim A\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e80f4779b032f68a6106e1424345450}{%
+           family={Mirza},
+           familyi={M\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=743dd6cdaa6639320289d219d351d7b7}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8151f1b8f85a048cacb34f374ec922b}{%
+           family={Warde-Farley},
+           familyi={W\bibinithyphendelim F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ca00ffd7cc35f7cfb8f698aa9239c76}{%
+           family={Ozair},
+           familyi={O\bibinitperiod},
+           given={Sherjil},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{fullhash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{fullhashraw}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{bibnamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorbibnamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authornamehash}{d17e6557c5836d2d978179999ea1037f}
+      \strng{authorfullhash}{fa2b4fb373e75fcf07b4b987e4507545}
+      \strng{authorfullhashraw}{fa2b4fb373e75fcf07b4b987e4507545}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Generative adversarial networks are a kind of artificial intelligence algorithm designed to solve the generative modeling problem. The goal of a generative model is to study a collection of training examples and learn the probability distribution that generated them. Generative Adversarial Networks (GANs) are then able to generate more examples from the estimated probability distribution. Generative models based on deep learning are common, but GANs are among the most successful generative models (especially in terms of their ability to generate realistic high-resolution images). GANs have been successfully applied to a wide variety of tasks (mostly in research settings) but continue to present unique challenges and research opportunities because they are based on game theory while most other approaches to generative modeling are based on optimization.}
+      \field{day}{22}
+      \field{issn}{0001-0782, 1557-7317}
+      \field{journaltitle}{Communications of the ACM}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{11}
+      \field{shortjournal}{Commun. ACM}
+      \field{title}{Generative Adversarial Networks}
+      \field{urlday}{13}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{63}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{139\bibrangedash 144}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/3422622
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/BJSCIX8N/Goodfellow et al. - 2020 - Generative adversarial networks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3422622
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3422622
+      \endverb
+    \endentry
+    \entry{goodfellowGenerativeAdversarialNetworks2014}{online}{}{}
+      \name{author}{8}{}{%
+        {{un=1,uniquepart=given,hash=d4f74ef4c79f3bb1e51e378184d8850e}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=a341d25f80a8118cdbb90b272adc8b4f}{%
+           family={Pouget-Abadie},
+           familyi={P\bibinithyphendelim A\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9e80f4779b032f68a6106e1424345450}{%
+           family={Mirza},
+           familyi={M\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=743dd6cdaa6639320289d219d351d7b7}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8151f1b8f85a048cacb34f374ec922b}{%
+           family={Warde-Farley},
+           familyi={W\bibinithyphendelim F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9ca00ffd7cc35f7cfb8f698aa9239c76}{%
+           family={Ozair},
+           familyi={O\bibinitperiod},
+           given={Sherjil},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8b5c7065f4df4f81627df9460343f166}
+      \strng{fullhash}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
+      \strng{fullhashraw}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
+      \strng{bibnamehash}{8b5c7065f4df4f81627df9460343f166}
+      \strng{authorbibnamehash}{8b5c7065f4df4f81627df9460343f166}
+      \strng{authornamehash}{8b5c7065f4df4f81627df9460343f166}
+      \strng{authorfullhash}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
+      \strng{authorfullhashraw}{5afe3eb3246d0b46f32cdc5ff3e9d6b8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to 1/2 everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.}
+      \field{day}{10}
+      \field{eprintclass}{stat.ML}
+      \field{eprinttype}{arXiv}
+      \field{month}{6}
+      \field{pubstate}{prepublished}
+      \field{title}{Generative {{Adversarial Networks}}}
+      \field{urlday}{13}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1406.2661
+      \endverb
+      \verb{eprint}
+      \verb 1406.2661
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/DZS2ESDF/Goodfellow et al. - 2014 - Generative Adversarial Networks.pdf;/Users/U10119050/Zotero/storage/7N9R6QWQ/1406.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1406.2661
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1406.2661
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{heDelvingDeepRectifiers2015}{online}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{fullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{authorfullhashraw}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Rectified activation units (rectifiers) are essential for state-of-the-art neural networks. In this work, we study rectifier neural networks for image classification from two aspects. First, we propose a Parametric Rectified Linear Unit (PReLU) that generalizes the traditional rectified unit. PReLU improves model fitting with nearly zero extra computational cost and little overfitting risk. Second, we derive a robust initialization method that particularly considers the rectifier nonlinearities. This method enables us to train extremely deep rectified models directly from scratch and to investigate deeper or wider network architectures. Based on our PReLU networks (PReLU-nets), we achieve 4.94\% top-5 test error on the ImageNet 2012 classification dataset. This is a 26\% relative improvement over the ILSVRC 2014 winner (GoogLeNet, 6.66\%). To our knowledge, our result is the first to surpass human-level performance (5.1\%, Russakovsky et al.) on this visual recognition challenge.}
+      \field{day}{6}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{month}{2}
+      \field{pubstate}{prepublished}
+      \field{shorttitle}{Delving {{Deep}} into {{Rectifiers}}}
+      \field{title}{Delving {{Deep}} into {{Rectifiers}}: {{Surpassing Human-Level Performance}} on {{ImageNet Classification}}}
+      \field{urlday}{20}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1502.01852
+      \endverb
+      \verb{eprint}
+      \verb 1502.01852
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/G7MEXBX4/He et al. - 2015 - Delving Deep into Rectifiers Surpassing Human-Level Performance on ImageNet Classification.pdf;/Users/U10119050/Zotero/storage/MQ84JZUB/1502.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1502.01852
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1502.01852
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning}
+    \endentry
+    \entry{heather2022unfortunate}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a34be3041781e46e2c9c8fb3746c8b83}{%
+           family={Heather},
+           familyi={H\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Oxford Institute for Energy Studies}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \strng{namehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{fullhash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{fullhashraw}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{bibnamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorbibnamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authornamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorfullhash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorfullhashraw}{a34be3041781e46e2c9c8fb3746c8b83}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{number}{111}
+      \field{title}{A {{Series}} of {{Unfortunate Events Explaining European Gas Prices}} in 2021 {{The}} Role of the Traded Gas Hubs}
+      \field{type}{OIES Energy Insight}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/BU4EMS46/Heather - 2022 - A Series of Unfortunate Events Explaining European Gas Prices in 2021 The role of the traded gas hub.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.oxfordenergy.org/wpcms/wp-content/uploads/2022/03/Insight-111-Explaining-European-gas-prices-in-2021-the-role-of-the-traded-gas-hubs.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.oxfordenergy.org/wpcms/wp-content/uploads/2022/03/Insight-111-Explaining-European-gas-prices-in-2021-the-role-of-the-traded-gas-hubs.pdf
+      \endverb
+    \endentry
+    \entry{heatherEuropeanTradedGas2026}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a34be3041781e46e2c9c8fb3746c8b83}{%
+           family={Heather},
+           familyi={H\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \list{publisher}{1}{%
+        {The Oxford Institute for Energy Studies}%
+      }
+      \strng{namehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{fullhash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{fullhashraw}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{bibnamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorbibnamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authornamehash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorfullhash}{a34be3041781e46e2c9c8fb3746c8b83}
+      \strng{authorfullhashraw}{a34be3041781e46e2c9c8fb3746c8b83}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-1-78467-299-7}
+      \field{langid}{english}
+      \field{number}{206}
+      \field{pagetotal}{1}
+      \field{series}{{{OIES}} Paper {{NG}}}
+      \field{shorttitle}{European Traded Gas Hubs}
+      \field{title}{European Traded Gas Hubs: Resilience in the Face of Adversity}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/RE8ENX6A/Heather - 2026 - European traded gas hubs resilience in the face of adversity.pdf
+      \endverb
+    \endentry
+    \entry{hochreiterLongShortTermMemory1997}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhashraw}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhashraw}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O. 1. Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.}
+      \field{day}{1}
+      \field{issn}{0899-7667, 1530-888X}
+      \field{journaltitle}{Neural Computation}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{8}
+      \field{shortjournal}{Neural Computation}
+      \field{title}{Long {{Short-Term Memory}}}
+      \field{urlday}{16}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1735\bibrangedash 1780}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1162/neco.1997.9.8.1735
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/Y46V29WT/Hochreiter and Schmidhuber - 1997 - Long Short-Term Memory.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://direct.mit.edu/neco/article/9/8/1735-1780/6109
+      \endverb
+      \verb{url}
+      \verb https://direct.mit.edu/neco/article/9/8/1735-1780/6109
+      \endverb
+    \endentry
+    \entry{koochaliProbabilisticForecastingSensory2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3078690b8ba97ec61c413d69c4cfc1bd}{%
+           family={Koochali},
+           familyi={K\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61f46fd1c3bf1ec12b55f111bc94e4ff}{%
+           family={Schichtel},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39509991baf1f5b54ef9eede853edd37}{%
+           family={Dengel},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7407b7acfa262023851056a7cd752a26}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Sheraz},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c6b7fbd1de94fc6987154b98f6414c22}
+      \strng{fullhash}{67098f1852a845cf3c441491c7f90980}
+      \strng{fullhashraw}{67098f1852a845cf3c441491c7f90980}
+      \strng{bibnamehash}{c6b7fbd1de94fc6987154b98f6414c22}
+      \strng{authorbibnamehash}{c6b7fbd1de94fc6987154b98f6414c22}
+      \strng{authornamehash}{c6b7fbd1de94fc6987154b98f6414c22}
+      \strng{authorfullhash}{67098f1852a845cf3c441491c7f90980}
+      \strng{authorfullhashraw}{67098f1852a845cf3c441491c7f90980}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2169-3536}
+      \field{journaltitle}{IEEE Access}
+      \field{shortjournal}{IEEE Access}
+      \field{title}{Probabilistic {{Forecasting}} of {{Sensory Data With Generative Adversarial Networks}} – {{ForGAN}}}
+      \field{urlday}{15}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{63868\bibrangedash 63880}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2915544
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/AFFYB5GB/Koochali et al. - 2019 - Probabilistic Forecasting of Sensory Data With Generative Adversarial Networks – ForGAN.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8717640/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8717640/
+      \endverb
+    \endentry
+    \entry{mirzaConditionalGenerativeAdversarial2014}{online}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9e80f4779b032f68a6106e1424345450}{%
+           family={Mirza},
+           familyi={M\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=643f92e8f89f2746a4c1aa077d225755}{%
+           family={Osindero},
+           familyi={O\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{fullhash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{fullhashraw}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{bibnamehash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{authorbibnamehash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{authornamehash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{authorfullhash}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \strng{authorfullhashraw}{f2f89b77d71eb2194d6d6c61ad603e9c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Generative Adversarial Nets [8] were recently introduced as a novel way to train generative models. In this work we introduce the conditional version of generative adversarial nets, which can be constructed by simply feeding the data, y, we wish to condition on to both the generator and discriminator. We show that this model can generate MNIST digits conditioned on class labels. We also illustrate how this model could be used to learn a multi-modal model, and provide preliminary examples of an application to image tagging in which we demonstrate how this approach can generate descriptive tags which are not part of training labels.}
+      \field{day}{6}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{month}{11}
+      \field{pubstate}{prepublished}
+      \field{title}{Conditional {{Generative Adversarial Nets}}}
+      \field{urlday}{14}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1411.1784
+      \endverb
+      \verb{eprint}
+      \verb 1411.1784
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/RVVAUM56/Mirza and Osindero - 2014 - Conditional Generative Adversarial Nets.pdf;/Users/U10119050/Zotero/storage/BA6UXKUF/1411.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1411.1784
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1411.1784
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{obadiDRIVINGFUNDAMENTALSNATURAL2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0e51cb9adf3bc24085721c262317e1bc}{%
+           family={Obadi},
+           familyi={O\bibinitperiod},
+           given={Saleh\bibnamedelima Mothana},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ab702781a50b95fdf0b87908f70deaa}{%
+           family={Korcek},
+           familyi={K\bibinitperiod},
+           given={Matej},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{fullhash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{fullhashraw}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{bibnamehash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{authorbibnamehash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{authornamehash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{authorfullhash}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \strng{authorfullhashraw}{a74d3b9a29d9d17f3461a0598e755ab8}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{issn}{21464553}
+      \field{journaltitle}{International Journal of Energy Economics and Policy}
+      \field{month}{10}
+      \field{number}{6}
+      \field{shortjournal}{IJEEP}
+      \field{title}{{{DRIVING FUNDAMENTALS OF NATURAL GAS PRICE IN EUROPE}}}
+      \field{urlday}{12}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{10}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{318\bibrangedash 324}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.32479/ijeep.10192
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/L9HAT4GV/Obadi and Korcek - 2020 - DRIVING FUNDAMENTALS OF NATURAL GAS PRICE IN EUROPE.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://econjournals.com/index.php/ijeep/article/view/10192
+      \endverb
+      \verb{url}
+      \verb https://econjournals.com/index.php/ijeep/article/view/10192
+      \endverb
+    \endentry
+    \entry{persian-gulf-26}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=057c2fc5eab6772bf3649b6e5e5e393f}{%
+           family={Sharples},
+           familyi={S\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e16f032a1a78cca21b4742ee0079584}{%
+           family={Farren-Price},
+           familyi={F\bibinithyphendelim P\bibinitperiod},
+           given={Bill},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {OXFORD ENERGY COMMENT}%
+      }
+      \strng{namehash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{fullhash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{fullhashraw}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{bibnamehash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{authorbibnamehash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{authornamehash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{authorfullhash}{ff3b9a532ea5a22923bf72f1441e0097}
+      \strng{authorfullhashraw}{ff3b9a532ea5a22923bf72f1441e0097}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{3}
+      \field{title}{The {{Iran War}} and {{Disruption}} to {{LNG Supply}} from the {{Persian Gulf}}}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/WVXBF9LV/Sharples and Farren-Price - 2026 - The Iran War and Disruption to LNG Supply from the Persian Gulf
+      \endverb
+    \endentry
+    \entry{vuleticFinGANForecastingClassifying2024}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2c15a14408d28cc77c74772b68cd747e}{%
+           family={Vuletić},
+           familyi={V\bibinitperiod},
+           given={Milena},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b93daa9942488a843911c016b64b55e}{%
+           family={Prenzel},
+           familyi={P\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab549b88c2d364be987b53cf82c60944}{%
+           family={Cucuringu},
+           familyi={C\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{860cf0f0c4380cc66ba10551c26a0c23}
+      \strng{fullhash}{dc0e6cceedb9503f20aefd642487d159}
+      \strng{fullhashraw}{dc0e6cceedb9503f20aefd642487d159}
+      \strng{bibnamehash}{dc0e6cceedb9503f20aefd642487d159}
+      \strng{authorbibnamehash}{dc0e6cceedb9503f20aefd642487d159}
+      \strng{authornamehash}{860cf0f0c4380cc66ba10551c26a0c23}
+      \strng{authorfullhash}{dc0e6cceedb9503f20aefd642487d159}
+      \strng{authorfullhashraw}{dc0e6cceedb9503f20aefd642487d159}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{1469-7688, 1469-7696}
+      \field{journaltitle}{Quantitative Finance}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{Quantitative Finance}
+      \field{shorttitle}{Fin-{{GAN}}}
+      \field{title}{Fin-{{GAN}}: Forecasting and Classifying Financial Time Series via Generative Adversarial Networks}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2026}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{175\bibrangedash 199}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1080/14697688.2023.2299466
+      \endverb
+      \verb{file}
+      \verb /Users/U10119050/Zotero/storage/VZEJ7CFB/Vuletić et al. - 2024 - Fin-GAN forecasting and classifying financial time series via generative adversarial networks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/full/10.1080/14697688.2023.2299466
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/full/10.1080/14697688.2023.2299466
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

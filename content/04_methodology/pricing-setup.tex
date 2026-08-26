@@ -1,0 +1,29 @@
+\subsection{Option Pricing Setup}\label{sec:pricing-setup}
+% The generator approximates the conditional distribution of the next daily log
+% return. Option pricing requires the distribution of the underlying price at
+% maturity, which lies several weeks ahead. Paths were therefore generated
+% recursively.
+
+% The condition was initialized with the $l$ realized returns preceding the
+% valuation date. At each step, one return was drawn from the generator and
+% appended to the condition, while the oldest observation was removed. The step
+% was repeated until the number of generated returns equalled the number of
+% trading days to maturity. After $l$ steps the condition consists of generated
+% returns only. Realized returns were not used after initialization, since they
+% are not available at the valuation date.
+
+% The simulated price at maturity follows from compounding the generated
+% returns,
+% \begin{equation}
+%     \hat{S}_T = S_0 \exp\left( \sum_{k=1}^{T} \hat{r}_k \right),
+% \end{equation}
+% where $S_0$ is the settlement price at the valuation date and $T$ is the
+% number of trading days to maturity. The procedure was repeated with
+% independent noise samples to obtain a distribution of $\hat{S}_T$.
+
+% The recursive scheme places the generator outside its training regime. The
+% networks were trained on conditions consisting of realized returns, whereas
+% after $l$ steps the condition consists of generated returns only. Deviations
+% in the generated distribution therefore accumulate along the path. The
+% consequences for the simulated terminal distribution are examined in
+% Sec.~\ref{sec:pricing-results}.
