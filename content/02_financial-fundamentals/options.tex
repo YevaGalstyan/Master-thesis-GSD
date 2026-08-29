@@ -1,0 +1,27 @@
+\subsection{Options}\label{sec:options}
+An option is a derivative that gives its holder the right, but not the obligation, to buy or sell an underlying asset at a fixed price. Options are traded on exchanges and also directly between two parties, which is referred to as over-the-counter trading. A \textbf{call option} is a right to buy the underlying asset and a \textbf{put option} is a right to sell it. The fixed price is called the strike price $K$, and the date on which the right expires is the expiry date. 
+
+American options can be exercised at any point up to the expiry date. European options can only be exercised on the expiry date \parencite[31]{hullOptionsFuturesOther2022}. TTF gas options are European.
+
+The payoff of an option is the value of the right at expiry. For a call option, the payoff is $\max(F_T - K, 0)$, where $F_T$ is the settlement price at expiry. The right is exercised only if $F_T > K$, otherwise the option is left unused.
+For a put option, the payoff is $\max(K - F_T, 0)$. The payoff of an option is never negative \parencite[231]{hullOptionsFuturesOther2022}. When the option is bought, the buyer pays the seller an amount called the premium. The premium is the price of an option.
+
+The relation between the current price and $K$ is described by three terms. A call option is \textbf{in the money} if $F_t > K$, \textbf{at the money} if $F_t = K$ and \textbf{out of the money} if $F_t < K$, where $F_t$ is the settlement price on trading day $t$. For a put option, the definitions are reversed \parencite[234]{hullOptionsFuturesOther2022}.
+
+The settlement price at expiry is unknown when the option is bought. A risk-neutral world is a world in which investors do not require a higher expected return for taking on more risk. In a risk-neutral world, the expected return on any investment is the risk-free rate. Pricing an option under this assumption gives the correct price in the real world as well \parencite[292]{hullOptionsFuturesOther2022}. The price of a European call is its expected payoff in a risk-neutral world, discounted at the risk-free rate
+
+\begin{equation}
+    c = e^{-r T} \hat{\mathbb{E}}[\max(F_T - K, 0)],
+    \label{eq:price-call}
+\end{equation}
+
+and the price of a European put is 
+
+\begin{equation}
+    p = e^{-r T} \hat{\mathbb{E}}[\max(K - F_T, 0)]
+    \label{eq:price-put}
+\end{equation}
+
+where $\hat{\mathbb{E}}$ denotes the expected value in a risk-neutral world, $r$ is the risk-free rate and $T$ is the time to maturity. The option is valued at time zero, so that the expiry date and the time to maturity are both equal to $T$. The probabilities entering $\hat{\mathbb{E}}$ are those of a risk-neutral world and not those observed in the price series. The price of an option depends on the distribution of $F_T$, rather than on its expected value alone.
+
+An option that is in the money would pay a positive amount at the current price, while an option that is out of the money would pay nothing. As a result, the value of an option depends entirely on the probability that the price moves past the strike before expiry.

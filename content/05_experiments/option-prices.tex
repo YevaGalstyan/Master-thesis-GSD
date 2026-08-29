@@ -1,2 +1,14 @@
 \subsection{Option Prices}\label{sec:option-prices}
 
+\todo{Figure: implied volatility against strike, one valuation date, one expiry,
+5--7 strikes around the money. Three curves: market (Databento settlement
+prices), Black-76 with historical volatility from the training split, and Monte
+Carlo on generated paths. Convert all three prices to implied volatility by
+inverting Eq.~\eqref{eq:black-76-call}, as described in Sec.~\ref{sec:implied-vol}.
+Expected result: the market curve is skewed to the right (Sec.~\ref{sec:implied-vol}),
+Black-76 is flat by construction, and the generated curve is too flat on the call
+side, since the SR branches thin the upper tail (Sec.~\ref{sec:properties-ttf}).
+Prose: state that Black-76 is used here as a change of units, not as a model of
+the return distribution --- prices at different strikes are not comparable in
+EUR/MWh. Drop-dead date for the Databento leg: September 4. If the market prices
+are not available, plot two curves and note the omission in the limitations.}

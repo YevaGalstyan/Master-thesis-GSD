@@ -27,15 +27,13 @@ Distributional statistics were computed for $x$, $\hat{x}_{\mathrm{path}}$ and $
 $10\%$ in absolute value were computed.
 
 The point forecast accuracy was measured using $x$ and $m$. The mean absolute error (MAE), the root mean squared error (RMSE) and correlation were computed, following \textcite{vuleticFinGANForecastingClassifying2024}. The fraction of positive values in $m$ was calculated to check whether the
-forecasts are biased in one direction. The standard deviation of $m$ was calculated to check how much the forecasts vary across conditions. 
+forecasts are biased in one direction. The standard deviation of $m$ was calculated to check how much the forecasts vary across conditions.
 
-The autocorrelation of the squared returns was computed for $x$ and
-$\hat{x}_{\mathrm{path}}$ at lags $1$, $2$, $5$ and $10$. The autocorrelation measures whether large returns are followed by
-large returns. $\hat{x}_{\mathrm{pool}}$ cannot be used since it has no order in time.
+$C_2(\tau)$ from Eq.~\ref{eq:vol-clustering} was computed for $x$ and $\hat{x}_{\mathrm{path}}$ at $\tau=1, 2, 5, 10$. $\hat{x}_{\mathrm{pool}}$ cannot be used since it has no order in time.
 
-The weighted strategy described in Sec.~\ref{sec:fin-gan} was applied to the rows of $\hat{X}$ and $x$. $\overline{\mathrm{wPnL}}$ and $\mathrm{SR}_{w}$ were computed. 
+The weighted strategy described in Sec.~\ref{sec:fin-gan} was applied to the rows of $\hat{X}$ and $x$. $\overline{\mathrm{wPnL}}$ and $\mathrm{SR}_{w}$ were computed.  Since the TTF series contains one return per trading day, $n_{\text{days}} = n$ in Eq.~\ref{eq:sharpe-weighted}.
 
-Lastly, the mode collapse described in Sec.~\ref{sec:fin-gan} was checked. For distribution mode collapse, the standard deviation of each row of $\hat{X}$ was computed. The smallest value was compared with $\epsilon$. For mean mode collapse, the standard deviation of $m$ was compared with $\epsilon$.
+Lastly, the mode collapse described in Sec.~\ref{sec:fin-gan} was checked. For distributional mode collapse, the standard deviation of each row of $\hat{X}$ was computed. The smallest value was compared with $\epsilon=0.0002$. For mean mode collapse, the standard deviation of $m$ was compared with the same $\epsilon$ value.
 
 % TODO: add motivation for the evaluation metrics once Sec. 2.3 exists.
 % - distributional statistics: which stylized facts they measure
