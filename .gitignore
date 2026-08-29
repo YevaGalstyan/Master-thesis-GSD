@@ -13,3 +13,5 @@
 *.lot
 .vscode/
 .DS_Store
+main.pdf
+*-SAVE-ERROR
