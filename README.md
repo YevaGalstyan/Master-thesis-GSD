@@ -1,4 +1,4 @@
-# Master's Thesis - Synthetic Price Path Generation for European Gas Markets
+# Master's Thesis — Synthetic Price Path Generation for European Gas Markets
 
 LaTeX source for the Master's thesis *Synthetic Price Path Generation for European Gas Markets Using Generative Adversarial Networks with Applications to Option Pricing*.
 
@@ -10,23 +10,52 @@ This repository contains the thesis document only. The data pipeline, model trai
 ## Repository structure
 
 ```
-main.tex                    Document root — includes everything below
-literatur.bib               Bibliography, auto-exported from Zotero
+main.tex                          Document root — includes everything below
+literatur.bib                     Bibliography, auto-exported from Zotero
 content/
-  preamble.tex              Packages, formatting, thesis setup
-  titlepage.tex
-  abstract.tex
+  misc/
+    preamble.tex                  Packages, formatting, thesis setup
+    titlepage.tex
+    abstract.tex
+    appendix.tex
+    ai_documentation.tex          Required documentation of AI tool usage
+    declaration.tex               Declaration of authorship
   01_introduction.tex
-  02_fundamentals/          Chapter 2, split by section
-  03_methodology/           Chapter 3, split by section
-  04_experiments.tex
-  05_discussion.tex
-  06_conclusion.tex
-  appendix.tex
-  ai_documentation.tex      Required documentation of AI tool usage
-  declaration.tex           Declaration of authorship
-figures/                    Figures included in the document
-assets/                     Institutional logo and template assets
+  02_financial-fundamentals/      Chapter 2, one file per section
+    index.tex                     Chapter lead-in and includes
+    financial-markets.tex
+    gas-markets.tex
+    futures.tex
+    options.tex
+    implied-vol.tex
+    stylized-facts.tex
+  03_ml-fundamentals/             Chapter 3
+    index.tex
+    neural-networks.tex
+    generative-adversarial-nets.tex
+    related-work.tex
+  04_methodology/                 Chapter 4
+    index.tex
+    data-pipeline.tex
+    model-architecture.tex
+    configuration-ablation.tex
+    benchmarks.tex
+    evaluation-method.tex
+    pricing-setup.tex
+    software-env.tex
+  05_experiments/                 Chapter 5
+    index.tex
+    properties-ttf.tex
+    baseline.tex
+    network-capacity.tex
+    condition-window.tex
+    effect-cost.tex
+    model-selection.tex
+    option-prices.tex
+  06_discussion.tex
+  07_conclusion.tex
+figures/                          Figures included in the document
+assets/                           Institutional logo and template assets
 ```
 
 Build artifacts (`main.aux`, `main.log`, `main.toc`, and similar) are generated on every compile and are excluded via `.gitignore`.
@@ -85,6 +114,8 @@ The default recipe must be `latexmk` (pdfLaTeX). The document uses Type 1 Palati
 
 Build with `LaTeX Workshop: Build LaTeX project` from the Command Palette; preview with `Ctrl/Cmd+Alt+V`.
 
+The LTeX dictionary and rule exceptions are tracked in `.vscode/` so that prose checking behaves consistently across machines.
+
 ### Bibliography
 
 `literatur.bib` is auto-exported from Zotero via Better BibTeX. To reconnect on a new machine:
@@ -104,6 +135,7 @@ Reference metadata is edited in Zotero, never directly in `literatur.bib` — th
 - `\textcite` where the author is the subject of the sentence, `\parencite` otherwise
 - Passive past tense for methodological decisions, present tense for architectural and definitional descriptions
 - Chapters are split into per-section files under `content/`
+- Skewness and excess kurtosis are reported as the biased sample estimators $g_1$ and $g_2$, applied to realized and generated returns alike
 
 ## Data
 
@@ -111,4 +143,4 @@ The TTF futures data (Bloomberg, via BASF) and the ICE TTF options data (Databen
 
 ## Status
 
-Private repository during the writing period. Publication after submission is under consideration.
+Draft.
