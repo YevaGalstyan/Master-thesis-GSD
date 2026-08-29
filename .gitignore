@@ -1,17 +1,29 @@
+# LaTeX build artifacts
 *.aux
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.lof
 *.log
+*.lot
 *.out
 *.run.xml
 *.synctex.gz
 *.toc
-*.lof
-*.lot
+*-SAVE-ERROR
+main.pdf
+
+# Python
+code/.venv/
+__pycache__/
+*.pyc
+
+# Data — licensed, not distributed
+code/data/
+code/output/
+
+# Editor and OS
 .vscode/
 .DS_Store
-main.pdf
-*-SAVE-ERROR

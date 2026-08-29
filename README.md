@@ -1,11 +1,9 @@
 # Master's Thesis — Synthetic Price Path Generation for European Gas Markets
 
-LaTeX source for the Master's thesis *Synthetic Price Path Generation for European Gas Markets Using Generative Adversarial Networks with Applications to Option Pricing*.
+LaTeX source and implementation for the Master's thesis *Synthetic Price Path Generation for European Gas Markets Using Generative Adversarial Networks with Applications to Option Pricing*.
 
 Yeva Galstyan · Department of Applied Computer Science, Fulda University of Applied Sciences
 Supervisor: Prof. Dr. Christoph Scheich · Co-supervisor: Dr. Alexander Jungwirth
-
-This repository contains the thesis document only. The data pipeline, model training, and evaluation code are maintained separately.
 
 ## Repository structure
 
@@ -56,11 +54,38 @@ content/
   07_conclusion.tex
 figures/                          Figures included in the document
 assets/                           Institutional logo and template assets
+code/                             Implementation — see below
 ```
 
 Build artifacts (`main.aux`, `main.log`, `main.toc`, and similar) are generated on every compile and are excluded via `.gitignore`.
 
-## Building
+## Code
+
+```
+code/
+  scripts/
+    build_front_month.py          Bloomberg parquet files to daily front-month series
+    build_options_master.py       Databento folders to contract-day master table
+    fingan.py                     Fin-GAN training, adapted from the reference code
+    ttf_eval.py                   Distributional evaluation of a trained generator
+    ttf_statistics.py             Summary statistics of the realized return series
+  data/                           Source data — not tracked
+  output/                         Generated files — not tracked
+  requirements.txt
+```
+
+The source data is not included in this repository. Place the Bloomberg parquet files and the Databento folders under `code/data/` before running anything.
+
+```bash
+cd code
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+`requirements.txt` records the versions used for the reported results; the same versions are listed in the software environment section of the thesis.
+
+## Building the document
 
 Requires a TeX distribution with `latexmk` and `biber`. On macOS, MacTeX provides both.
 
@@ -96,7 +121,7 @@ Both should resolve under `/Library/TeX/texbin/`.
 
 Install the **LaTeX Workshop** extension (James Yu). Recommended additions: **Code Spell Checker** and **LTeX+** for prose checking.
 
-Workspace settings live in `.vscode/settings.json`:
+Editor settings are not tracked. Create `.vscode/settings.json` locally with:
 
 ```json
 {
@@ -113,8 +138,6 @@ Workspace settings live in `.vscode/settings.json`:
 The default recipe must be `latexmk` (pdfLaTeX). The document uses Type 1 Palatino, which LuaLaTeX cannot resolve — building with the LuaLaTeX recipe fails on missing glyphs, including the euro sign.
 
 Build with `LaTeX Workshop: Build LaTeX project` from the Command Palette; preview with `Ctrl/Cmd+Alt+V`.
-
-The LTeX dictionary and rule exceptions are tracked in `.vscode/` so that prose checking behaves consistently across machines.
 
 ### Bibliography
 
