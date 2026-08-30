@@ -1,10 +1,10 @@
 \subsection{Generative Adversarial Networks}
-
-\subsubsection{Basic Generative Adversarial Networks}\label{sec:basic-gan}
-Generative modeling is an unsupervised learning approach. A generative model takes a set of training examples and learns the probability distribution that produced them. GANs are generative models first introduced by \textcite{goodfellowGenerativeAdversarialNetworks2014}.
+Generative modeling is an unsupervised learning approach (Sec.~\ref{sec:nn-training}). A generative model takes a set of training examples and learns the probability distribution that produced them. GANs are generative models first introduced by \textcite{goodfellowGenerativeAdversarialNetworks2014}.
 GANs have been particularly successful in image and video generation. They have also been used to create synthetic data, for training other machine learning models and to fill in gaps in missing data \parencite{goodfellowGenerativeAdversarialNetworks2020}.
 
-GANs are based on game theory, which studies situations where several decision-makers are present. Each participant chooses an action, and the outcome depends on the choices of all of the participants. A GAN has two decision-makers, \textbf{the generator (G)} and \textbf{the discriminator ($D$)}, typically implemented as neural networks. $G$ takes a vector of random noise as input and generates a sample as output. $D$ takes a real or generated data sample as input and outputs a probability that the input sample is real. The goal of $G$ is to fool $D$ by generating realistic-looking data samples. The goal of $D$ is to distinguish real samples from generated ones.
+\subsubsection{Basic Generative Adversarial Networks}\label{sec:basic-gan}
+
+GANs are based on game theory, which studies situations where several decision-makers are present. Each participant chooses an action, and the outcome depends on the choices of all participants. A GAN has two decision-makers, the generator $G$ and the discriminator $D$, typically implemented as neural networks. $G$ takes a vector of random noise as input and generates a sample as output. $D$ takes a real or generated data sample as input and outputs a probability that the input sample is real. The goal of $G$ is to fool $D$ by generating realistic samples. The goal of $D$ is to distinguish real samples from generated ones.
 
 Assume that the data $x$ follows an unknown distribution $p_{data}$, from which new samples need to be generated. The generator is a neural network $G(z; \theta_g)$, where $\theta_g$ denotes the learnable parameters. The input $z$ is a noise vector drawn from a prior distribution $p_z$. Gaussian distribution is normally used to define $p_z$; the GAN framework does not add limitations. The probability distribution of the generated samples is denoted $p_g$. The discriminator is a neural network $D(x; \theta_d)$, with learnable parameters $\theta_d$. It outputs the estimated probability that the input was drawn from  $p_{data}$ rather than $p_{g}$. $G$ and $D$ have cost functions, respectively $J^{(G)}(\theta_d, \theta_g)$ and $J^{(D)}(\theta_d, \theta_g)$. Both $G$ and $D$ need to minimize their cost functions, while they can only control their learnable parameters, respectively $\theta_g$ and $\theta_d$. Hence, the solution is a Nash equilibrium, rather than a minimum of a single cost function.
 
@@ -13,7 +13,7 @@ The GAN framework is flexible in the sense of the cost functions applied to $G$ 
 J^{(G)}(\theta_d, \theta_g) = -J^{(D)}(\theta_d, \theta_g).
 \end{equation}
 
-The cost function of $D$ is defined as a standard cross-entropy
+The cost function of $D$ is defined as a standard cross-entropy (Sec.~\ref{sec:nn-training})
 \begin{equation}
 J^{(D)}\bigl(\theta_d, \theta_g\bigr)
 = -\frac{1}{2}\,\mathbb{E}_{x \sim p_{\text{data}}} \log D(x)
@@ -42,7 +42,14 @@ Fig.~\ref{fig:standard-gan} is the visualization of a standard GAN workflow adap
     \label{fig:standard-gan}
 \end{figure}
 
-GANs are trained by updating the two networks in turn. At each step, a minibatch of samples and noise vectors are drawn from $p_{\mathrm{data}}$ and $p_z$ respectively. $D$ is updated with respect to $\theta_d$ while $\theta_g$ is fixed. $G$ is updated with respect to $\theta_g$ while $\theta_d$ is fixed. $D$ is commonly trained $k$ times for every update of $G$, although \textcite{goodfellowNIPS2016Tutorial2017} argues that $k=1$ is sufficient. $k$ is defined as an independent training parameter.
+GANs are trained by updating the two networks in turn. At each step, a minibatch of samples and noise vectors are drawn from $p_{\mathrm{data}}$ and $p_z$ respectively. $D$ is updated with respect to $\theta_d$ while $\theta_g$ is fixed. $G$ is updated with respect to $\theta_g$ while $\theta_d$ is fixed. $D$ is commonly trained $k$ times for every update of $G$, although \textcite{goodfellowNIPS2016Tutorial2017} argues that $k=1$ is sufficient. $k$ is defined as an independent training parameter. The update cycle is shown in Fig.~\ref{fig:gan-update-cycle}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/gan_update_cycle.pdf}
+    \caption{Alternating update cycle of a GAN. One $D$ update is performed per $G$ update ($k=1$).}
+    \label{fig:gan-update-cycle}
+\end{figure}
 
 As stated previously, convergence is not guaranteed in practice. This means that the training of a GAN can settle in a state where $p_g \neq p_{\mathrm{data}}$. The most common such state is mode collapse. It occurs when $G$ repeatedly maps noise vector to very similar outputs. As a result, $p_g$ covers only a small part of $p_{\mathrm{data}}$ but $D$ assigns a high probability that the generated samples are real. Mode collapse is still an unresolved challenge in GAN training. In recent years, several strategies have been proposed to mitigate its effect, such as stronger generators and discriminators, longer training and regularization. However, each of these approaches comes with drawbacks \parencite{barshaIndepthReviewAnalysis2025}.
 
@@ -123,11 +130,11 @@ $\mathrm{SR}^{*}$ is defined as the mean of the $\mathrm{PnL}^{*}_{a}$ series di
 \label{eq:sharpe-ratio}
 \end{equation}
 
-where $p_i = \mathrm{PnL}^{*}_{a}(x_i, \hat{x}_i)$ and $\bar{p}$ is its mean over the $n_{\mathrm{batch}}$ forecasts. $\mathrm{SR}^{*}$ deviates from Eq.~\ref{eq:std-sharpe-ratio}. The risk-free rate is not subtracted, since the daily risk-free rate is small relative to the daily $\mathrm{PnL}^*_a$. The ratio is not annualized, because a constant factor would be absorbed by the weight $\gamma$ during gradient matching. Lastly, $\mathrm{SR}^*$ is computed over the $n_{\mathrm{batch}}$ forecasts of a minibatch rather than over a return series. Stochastic gradient descent requires random minibatches. As a result, forecasts entering $\mathrm{SR}^*$ are not in chronological order \parencite[11]{vuleticFinGANForecastingClassifying2024}.
+where $p_i = \mathrm{PnL}^{*}_{a}(x_i, \hat{x}_i)$ and $\bar{p}$ is its mean over the $n_{\mathrm{batch}}$ forecasts. $\mathrm{SR}^{*}$ deviates from Eq.~\ref{eq:std-sharpe-ratio}. The risk-free rate is not subtracted, since the daily risk-free rate is small relative to the daily $\mathrm{PnL}^*_a$. The ratio is not annualized, because a constant factor would be absorbed by the weight $\gamma$ during gradient matching. Lastly, $\mathrm{SR}^*$ is computed over the $n_{\mathrm{batch}}$ forecasts of a minibatch rather than over a return series. As described in Sec.~\ref{sec:nn-training}, SGD requires random minibatches. As a result, forecasts entering $\mathrm{SR}^*$ are not in chronological order \parencite[11]{vuleticFinGANForecastingClassifying2024}.
 
 The standard deviation $\mathrm{STD}$ term is the denominator of Eq.~\ref{eq:sharpe-ratio}. Logically maximizing $\mathrm{SR}^{*}$ is the same as maximizing $\mathrm{PnL}^{*}_{a}$ and minimizing $\mathrm{STD}$ at the same time. As a result, including all three terms in $L^{G}$ is redundant. However, during training $\mathrm{SR}^{*}$ and the combination of $\mathrm{PnL}^{*}_{a}$ and $\mathrm{STD}$ produce different gradients \parencite{vuleticFinGANForecastingClassifying2024}.
 
-\textbf{Gradient matching.} All the terms above are measured in different units, hence they produce incomparable gradients. As a solution, four additional hyperparameters $\alpha$, $\beta$, $\gamma$, $\delta$ are introduced. Fin-GAN is first trained on $J^{(G)}$ only, and gradient norms of other terms are calculated. Each hyperparameter is the mean of the ratios between the cross-entropy gradient norms and the gradient norms of the corresponding term.
+\textbf{Gradient matching.} All the terms above are measured in different units, hence they produce incomparable gradients. As a solution, four additional hyperparameters $\alpha$, $\beta$, $\gamma$, $\delta$ are introduced. Fin-GAN is first trained on $J^{(G)}$ only, and gradient norms (Sec.~\ref{sec:nn-training}) of other terms are calculated. Each hyperparameter is the mean of the ratios between the cross-entropy gradient norms and the gradient norms of the corresponding term.
 Large values of $\alpha$, $\beta$, $\gamma$, $\delta$ make the feedback of $D$ insignificant and move the model towards supervised learning, but small values leave it in the standard GAN setting.
 
 If the term is not included in the objective, the hyperparameter is set to zero. Several versions of $L^{G}$ can be constructed from different combinations of terms. Only combinations that include economics-driven terms are considered for Fin-GAN. \textcite{vuleticFinGANForecastingClassifying2024} train eight such versions and select the combination with the highest Sharpe ratio $\mathrm{SR}_{w}$ on the validation set. Then, the selected $G$ is evaluated on the test set.
@@ -136,7 +143,7 @@ If the term is not included in the objective, the hyperparameter is set to zero.
 when $G$ generates nearly identical samples for a single condition. 
 Mean mode collapse happens when the means of the generated
 distributions are nearly identical across all conditions.
-Both are identified by a standard deviation below a threshold $\epsilon=0.0002$. Fin-GAN uses normal Xavier initialization \parencite{xavier-init}, since ForGAN suffered mode collapse in \SI{67}{\percent} of runs under He initialization \parencite{heDelvingDeepRectifiers2015}. However, no mode collapse happened with the economics-driven terms, under either initialization. Mode collapse is a known failure mode of GAN training in general, as described in Sec.~\ref{sec:basic-gan}. 
+Both are identified by a standard deviation below a threshold $\epsilon=0.0002$. Fin-GAN uses normal Xavier initialization (Sec.~\ref{sec:nn-training}), since ForGAN suffered mode collapse in \SI{67}{\percent} of runs under He initialization. However, no mode collapse happened with the economics-driven terms, under either initialization. Mode collapse is a known failure mode of GAN training in general, as described in Sec.~\ref{sec:basic-gan}. 
 
 \textbf{Weighted strategy.} The Sharpe ratio $\mathrm{SR}_{w}$ is not to be confused with the
 $\mathrm{SR}^{*}$ term of Eq.~\ref{eq:sharpe-ratio}. $\mathrm{SR}_{w}$

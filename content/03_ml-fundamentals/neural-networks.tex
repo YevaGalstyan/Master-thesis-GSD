@@ -1,27 +1,55 @@
 \subsection{Neural Networks}\label{sec:nn}
-% \todo{TODO (2.5 lead-in, before 2.5.1): 0. neuron as weighted sum plus
-% activation, layer, weights and biases as learnable parameters
-% $\theta$, forward pass, ReLU and sigmoid (forward pointer to 3.2.1
-% where both are used), width/hidden size as capacity. Two short
-% paragraphs, no figure.}
-% \subsubsection{Training}\label{sec:nn-training}
+Feedforward neural networks are a class of machine learning models that define a mapping $y=f(x;\theta)$, where $x$ is the input, $y$ is the output, and $\theta$ are the learnable parameters. The model is a composition of functions 
+\begin{equation}
+f(x) = f^{(L)}\!\left(\cdots f^{(2)}\!\left(f^{(1)}(x)\right)\cdots\right),
+\label{eq:nn-composition}
+\end{equation}
+where $f^{(L)}$ is the output layer, and $L$ is the depth of the network. $f^{(1)}$, $f^{(2)}$, $\dots$, $f^{(L-1)}$ are referred to as the hidden layers. The dimensionality of the hidden layers is called their width. Computing $f(x)$ by evaluating the functions in order is called forward propagation. Each layer multiplies its input by a weight matrix $W$ and adds a bias vector $b$. The operation is linear, so a composition of linear functions would again be linear. A nonlinear activation function $g$ is applied to the output
+\begin{equation}
+f^{(i)}(x) = g\!\left(W^{(i)} x + b^{(i)}\right).
+\end{equation}
+The weights and biases of all layers form the learnable parameters $\theta$. Rectified linear unit (ReLU) and sigmoid are two commonly used activation functions. ReLU is defined as $g(x) = \max(0,x)$, and sigmoid is defined as $g(x) = 1/(1+\exp(-x))$. Sigmoid is often used in the output layer for binary classification to map the output to $(0,1)$. ReLU is often used in the hidden layers \parencite[ch.~6]{goodfellowDeepLearning2016}.
 
-% \todo{TODO: 1. supervised vs. unsupervised learning, labeled target vs.
-% learning a distribution from samples -- needed for 2.6.1 (generative
-% modeling is unsupervised) and 2.6.4 (Vuleti\'c et al. classify
-% Fin-GAN as supervised) 2. cost function, then cross-entropy as the
-% loss for binary classification -- consumed directly by Eq. 5 3.
-% gradient, gradient descent, gradient norm -- the norm is required for
-% the matching procedure in 2.6.4 and for $\alpha,\beta,\gamma,\delta$
-% in 3.2.2 4. optimizer and learning rate, RMSProp in two sentences,
-% value 0.0001 used in 3.2.2 5. minibatch and epoch; state explicitly
-% that an epoch is one full pass over the training data, so that
-% $n_{\mathrm{grad}} + n_{\mathrm{epochs}}$ in 3.2.2 reads as the
-% effective training length 6. weight initialization, normal Xavier and
-% He, one sentence each with existing citations -- needed for the mode
-% collapse discussion in 2.6.4 7. hyperparameter vs. learnable
-% parameter, and capacity/under-training -- load-bearing for the
-% $R_G$ finding in Ch. 4 and the collapse explanation in Ch. 5}
+\subsubsection{Training}\label{sec:nn-training}
+
+Training is a process of finding parameters $\theta$ that fit the model to a set of examples, called training data. Learning problems are generally categorized as supervised and unsupervised.
+In supervised learning, the model learns a mapping from input to output using labeled data. Labeled data consists of input-output pairs, where the output is the target value. In unsupervised learning, the data is unlabeled and the model learns the probability distribution that produced it.
+
+The parameters $\theta$ must be chosen so that the model fits the training data. The cost function measures how badly the model performs on the training data. In supervised learning, it measures the difference between the model output and the target value. In unsupervised learning, it measures how poorly the model's distribution matches the data. Training minimizes the cost function with respect to $\theta$. 
+
+Classification is a supervised learning problem where the model predicts which category each input belongs to. These categories are called classes. In binary classification there are two classes. Cross-entropy is a commonly used cost function for binary classification. This cost function is defined as 
+\begin{equation}
+   J(\theta) = -\frac{1}{n}\,\sum_{i=1}^{n}[y_i\log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)],
+\end{equation}
+where $n$ is the number of training examples, $y_i \in \{0,1\}$ is the true class and $\hat{y}_i$ is the predicted probability. $J$ is small when the predicted probability is close to the true class. $J$ grows without bound as the predicted probability approaches the opposite class.
+
+The gradient $\nabla_{\theta}J$ is the vector of partial derivatives of $J$ with respect to $\theta$. $\nabla_{\theta}J$ points in the direction of the greatest increase of $J$. Moving in the direction of the negative $\nabla_{\theta}J$ decreases $J$. This procedure is called gradient descent. Each step of gradient descent updates the parameters $\theta$ according to
+\begin{equation}
+\theta' = \theta - \eta \nabla_{\theta}J,
+\end{equation}
+where $\eta$ is the step size, called the learning rate. The step is repeated until the cost stops decreasing. Backward propagation computes the gradient of $J$ with respect to $\theta$ by applying the chain rule to the composition in Eq.~\eqref{eq:nn-composition}.
+
+The norm of a vector is a measure of its length. The gradient norm measures the magnitude of $\nabla_{\theta}J$ and is defined as
+\begin{equation}
+\|\nabla_{\theta}J\| = \sqrt{\sum_{i=1}^{m}\left(\frac{\partial J}{\partial \theta_i}\right)^2},
+\end{equation}
+where $m$ is the number of parameters in $\theta$.
+
+Computing the gradient over the entire training data is computationally expensive. Instead, the training data is divided into subsets called minibatches. The gradient is computed, and the parameters are updated for each minibatch. The minibatches are drawn randomly, so each gradient is a noisy estimate of the gradient over the full training data. This is called stochastic gradient descent (SGD). One pass over the entire training data is called an epoch. The training data is shuffled at the start of each epoch, so that the minibatches differ between epochs.
+
+The cost function of a neural network is generally non-convex. A function is convex if it has a single global minimum, while non-convex functions have multiple local minima. Gradient descent may converge to a local minimum, which may not be the global minimum. Neural networks are trained with optimizers, variants of gradient descent that adapt the step size during the training process. RMSProp is an example of such an optimizer. It divides the learning rate by a running average of the squared partial derivatives for each parameter. As a result, each parameter has its own effective learning rate. 
+
+The initial values of the parameters $\theta$ affect the convergence of the training process. If the initial values are too small, the gradients become very small, and the training process is slow. If the initial values are too large, the gradients grow and the training process diverges. Two commonly used initialization methods are Xavier \parencite{xavier-init} and He initialization \parencite{heDelvingDeepRectifiers2015}. Both methods draw the initial values from a normal distribution with mean zero. The standard deviation differs between the two methods
+\begin{equation}
+s_{\text{Xavier}} = \sqrt{\frac{2}{n_{\text{in}} + n_{\text{out}}}}, \qquad
+s_{\text{He}} = \sqrt{\frac{2}{n_{\text{in}}}},
+\end{equation}
+where $n_{\text{in}}$ and $n_{\text{out}}$ are the input and output dimensions of the layer.
+
+Apart from learnable parameters $\theta$, neural networks have hyperparameters that are set before training. Hyperparameters include 
+the learning rate, the number of epochs, the minibatch size and the width of the layers. They are not learned during training, but they affect the training process and the final model. Hyperparameters are chosen by experiment. 
+
+The capacity of a neural network is its ability to represent a wide range of functions. Adding more layers to the model or increasing the width of the layers increases the capacity. A model with insufficient capacity underfits. Underfitting occurs when the model's output does not fit the training data well. A model with excessive capacity is prone to overfitting. Overfitting occurs when the model fits the training data closely but performs poorly on unseen data.
 
 \subsubsection{Recurrent Neural Networks and LSTM}\label{sec:rnn}
 
