@@ -160,6 +160,11 @@ Reference metadata is edited in Zotero, never directly in `literatur.bib` — th
 - Chapters are split into per-section files under `content/`
 - Skewness and excess kurtosis are reported as the biased sample estimators $g_1$ and $g_2$, applied to realized and generated returns alike
 
+## License
+
+The code in `code/` builds on the [Fin-GAN reference implementation](https://github.com/milenavuletic/Fin-GAN) by Vuletić et al., which is licensed under GPL-3.0, and is therefore also GPL-3.0. See `code/LICENSE`. The thesis text and figures are not covered by that
+license.
+
 ## Data
 
 The TTF futures data (Bloomberg, via BASF) and the ICE TTF options data (Databento) are licensed and are not included in this repository. Processing steps are documented in the methodology chapter and are reproducible given access to the same sources.

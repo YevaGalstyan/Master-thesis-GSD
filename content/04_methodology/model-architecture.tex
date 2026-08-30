@@ -17,8 +17,8 @@ Following \textcite{vuleticFinGANForecastingClassifying2024}, the cost function 
 
 
 \subsubsection{Adaptations}
-The implementation is based on the reference Fin-GAN code published by \textcite{vuleticFinGANForecastingClassifying2024}. The network definitions, the gradient norm matching procedure and the training loops were adopted from that implementation. The cost function terms of Sec.~\ref{sec:fin-gan} were adopted without
-modification.
+The implementation is based on the reference Fin-GAN code published by \textcite{vuleticFinGANForecastingClassifying2024}. The network definitions, the gradient norm matching procedure and the cost function terms of Sec.~\ref{sec:fin-gan} were adopted without
+modification. The training loop for the branch trained on cross-entropy alone (Sec.~\ref{sec:training-config}) does not call the backward pass on the generator loss, so no gradient reaches the generator. The training loops for the other branches do call it. To ensure that the ForGAN baseline is trained under the same procedure, the backward pass on the generator loss was added to the corresponding training loop.
 
 The data structure with intraday and overnight returns was not adopted. As described in Sec.~\ref{sec:data-pipeline}, the dataset was constructed from daily log returns of the front-month settlement prices of TTF futures. The data loading functions were modified accordingly. Additionally, a separate evaluation module was implemented to compute $\mathrm{SR}_{w}$, the forecast accuracy and the distributional statistics, as described in Sec.~\ref{sec:evaluation}. A new $\mathrm{SR}_{w}$ function was required, because the original implementation sums two $\mathrm{wPnL}^{i}_{2}$ values per day, as described in Sec.~\ref{sec:fin-gan}. This is not applicable to the daily TTF data.
 

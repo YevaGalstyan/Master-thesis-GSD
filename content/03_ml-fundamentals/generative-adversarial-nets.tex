@@ -136,7 +136,7 @@ If the term is not included in the objective, the hyperparameter is set to zero.
 when $G$ generates nearly identical samples for a single condition. 
 Mean mode collapse happens when the means of the generated
 distributions are nearly identical across all conditions.
-Both are identified by a standard deviation below a threshold $\epsilon=0.0002$. Fin-GAN uses normal Xavier initialization \parencite{xavier-init}, since ForGAN suffered mode collapse in 67\% of runs under He initialization \parencite{heDelvingDeepRectifiers2015}. However, no mode collapse happened with the economics-driven terms, under either initialization.
+Both are identified by a standard deviation below a threshold $\epsilon=0.0002$. Fin-GAN uses normal Xavier initialization \parencite{xavier-init}, since ForGAN suffered mode collapse in \SI{67}{\percent} of runs under He initialization \parencite{heDelvingDeepRectifiers2015}. However, no mode collapse happened with the economics-driven terms, under either initialization. Mode collapse is a known failure mode of GAN training in general, as described in Sec.~\ref{sec:basic-gan}. 
 
 \textbf{Weighted strategy.} The Sharpe ratio $\mathrm{SR}_{w}$ is not to be confused with the
 $\mathrm{SR}^{*}$ term of Eq.~\ref{eq:sharpe-ratio}. $\mathrm{SR}_{w}$
