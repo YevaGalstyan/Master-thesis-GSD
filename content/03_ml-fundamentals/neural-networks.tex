@@ -4,7 +4,9 @@ Feedforward neural networks are a class of machine learning models that define a
 f(x) = f^{(L)}\!\left(\cdots f^{(2)}\!\left(f^{(1)}(x)\right)\cdots\right),
 \label{eq:nn-composition}
 \end{equation}
-where $f^{(L)}$ is the output layer, and $L$ is the depth of the network. $f^{(1)}$, $f^{(2)}$, $\dots$, $f^{(L-1)}$ are referred to as the hidden layers. The dimensionality of the hidden layers is called their width. Computing $f(x)$ by evaluating the functions in order is called forward propagation. Each layer multiplies its input by a weight matrix $W$ and adds a bias vector $b$. The operation is linear, so a composition of linear functions would again be linear. A nonlinear activation function $g$ is applied to the output
+where $f^{(L)}$ is the output layer, and $L$ is the depth of the network. $f^{(1)}$, $f^{(2)}$, $\dots$, $f^{(L-1)}$ are referred to as the hidden layers. The dimensionality of the hidden layers is called their width. Computing $f(x)$ by evaluating the functions in order is called forward propagation.
+
+Several types of layers exist, including fully connected, convolutional, and recurrent layers. Only fully connected layers, also called dense layers, and recurrent layers are used in this thesis. Recurrent layers are described in Sec.~\ref{sec:rnn}. In a dense layer, the input is multiplied by a weight matrix $W$ and a bias vector $b$ is added. The operation is linear, so a composition of linear functions would again be linear. A nonlinear activation function $g$ is applied to the output
 \begin{equation}
 f^{(i)}(x) = g\!\left(W^{(i)} x + b^{(i)}\right).
 \end{equation}
@@ -46,20 +48,36 @@ s_{\text{He}} = \sqrt{\frac{2}{n_{\text{in}}}},
 \end{equation}
 where $n_{\text{in}}$ and $n_{\text{out}}$ are the input and output dimensions of the layer.
 
-Apart from learnable parameters $\theta$, neural networks have hyperparameters that are set before training. Hyperparameters include 
-the learning rate, the number of epochs, the minibatch size and the width of the layers. They are not learned during training, but they affect the training process and the final model. Hyperparameters are chosen by experiment. 
+Apart from learnable parameters $\theta$, neural networks have hyperparameters that are set before training. Hyperparameters include the learning rate, the number of epochs, the minibatch size and the width of the layers. They are not learned during training, but they affect the training process and the final model. Hyperparameters are chosen by experiment. 
 
 The capacity of a neural network is its ability to represent a wide range of functions. Adding more layers to the model or increasing the width of the layers increases the capacity. A model with insufficient capacity underfits. Underfitting occurs when the model's output does not fit the training data well. A model with excessive capacity is prone to overfitting. Overfitting occurs when the model fits the training data closely but performs poorly on unseen data.
 
 \subsubsection{Recurrent Neural Networks and LSTM}\label{sec:rnn}
 
-% \todo{TODO: 1. why a feedforward network cannot process an ordered
-% sequence, hidden state carried across time steps, final hidden state
-% as a fixed-length vector representation of the sequence -- this is
-% what 2.6.3 means by the recurrent layer processing $c$ 2. vanishing
-% gradients over long sequences, one or two sentences 3. LSTM cell
-% state and gates, kept qualitative, cite Hochreiter and Schmidhuber
-% (1997) 4. hidden size $R$ as the width of the recurrent layer, tying
+Time series data is an ordered sequence: the position of each value in the sequence carries information. A dense layer has separate parameters for each input position. What a dense layer learns from one position does not transfer to other positions. A recurrent layer processes a sequence of values, using the same parameters $\theta$ for each position. A neural network consisting of recurrent layers is called a recurrent neural network. 
+
+Recurrent layers are updated sequentially, one step at a time. At each step, a recurrent layer takes the current input and a hidden state carried from the previous step to produce the output and the next hidden state
+\begin{equation}
+h^{(t)} = f\!\left(h^{(t-1)}, x^{(t)}; \theta\right),
+\end{equation}
+where $h^{(t)}$ is the hidden state at step $t$ and $x^{(t)}$ is the input at step $t$. The final hidden state $h^{(T)}$ is a fixed-length vector representation of the entire sequence, where $T$ is the length of the sequence.
+
+The dimension of the hidden state is called the hidden size of the recurrent layer and determines the capacity of the layer. The hidden size is a hyperparameter that is set before training.
+
+In a recurrent layer, the gradient $\nabla_{\theta}J$ is propagated backward through every step of the sequence. The same parameters $\theta$ are applied at each step, so $\nabla_{\theta}J$ is multiplied by the same factor at each step. As a result, $\nabla_{\theta}J$ can grow without bound or vanish to zero over long sequences. This is commonly called the  vanishing and exploding gradient problem.
+
+The long short-term memory (LSTM) cell \parencite{hochreiterLongShortTermMemory1997} addresses the vanishing and exploding gradient problem. It introduces a memory cell $c^{(t)}$, carried alongside the hidden state. Three gates with entries in $(0, 1)$ control the memory cell. They determine how much of the memory cell is retained, how much of the current input is stored in the memory cell, and how much of the memory cell is passed to the output. The memory cell is updated by addition, so the gradient can flow through many steps without vanishing. The gated recurrent unit (GRU) \parencite{choLearningPhraseRepresentations2014} is a related gated architecture.
+
+\todo{
+   1. why a feedforward network cannot process an ordered sequence - done
+   2. hidden state carried across time steps, final hidden state as a fixed-length vector representation of the sequence - done
+   3. this is what 3.2.3 means by the recurrent layer processing $c$ - done
+   4. vanishing gradients over long sequences, 
+   5. LSTM cell
+   6. state and gates, kept qualitative, cite Hochreiter and Schmidhuber (1997)
+   7. brief GRU mention only, since ForGAN permits it but LSTM is used - done
+}
+%  4. hidden size $R$ as the width of the recurrent layer, tying
 % back to capacity in 2.5.1 and forward to $R_G$ and $R_D$ in 3.2.1
-% 5. brief GRU mention only, since ForGAN permits it but LSTM is used
+% 5. 
 % throughout -- forward pointer to 2.6.3 Forward pointer: applied in 2.6.3 and 3.2.1; capacity varied in 3.3.}

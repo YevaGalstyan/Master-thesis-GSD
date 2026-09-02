@@ -4,7 +4,7 @@ The model follows Fin-GAN, with the architecture and training setup taken from t
 Sec.~\ref{sec:adaptations}.
 
 \subsubsection{Model Architecture}
-The ForGAN architecture described in Sec.~\ref{sec:forgan} was used without structural modifications. In $G$, the condition passed through an LSTM layer. The final hidden state was concatenated with the noise vector $z$. The result passed through a dense layer of width $R_G+N$, then a ReLU activation (Sec.~\ref{sec:nn}) and another dense layer of width one, where $R_G$ is the  LSTM hidden size and $N$ is the noise dimension.
+The ForGAN architecture described in Sec.~\ref{sec:forgan} was used without structural modifications. In $G$, the condition passed through an LSTM layer, described in Sec.~\ref{sec:rnn}. The final hidden state was concatenated with the noise vector $z$. The result passed through a dense layer of width $R_G+N$, then a ReLU activation and another dense layer of width one, where $R_G$ is the LSTM hidden size and $N$ is the noise dimension.
 In $D$, the candidate value ($\hat{x}_{t+1}$ or $x_{t+1}$) was appended to the condition, which gave a sequence of size $l+1$. The result passed through an LSTM layer with the hidden size $R_D$. The final hidden state passed through a dense layer with a sigmoid activation (Sec.~\ref{sec:nn}). The network definitions are in \texttt{FinGAN.py}.
 
 

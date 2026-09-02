@@ -87,7 +87,7 @@ $G$ takes a noise vector $z$ and $c$ and outputs a value for the target $x_{t+1}
 
 A full probabilistic distribution of $x_{t+1}$ can be obtained through repeated sampling of $G$ with different noise vectors and the same $c$.
 
-ForGAN adds a recurrent layer to $G$ and $D$. The layer processes $c$ as an ordered sequence and constructs a vector representation. The recurrent layer can be a long short-term memory (LSTM)\parencite{hochreiterLongShortTermMemory1997} or a gated recurrent unit (GRU)  \parencite{choLearningPhraseRepresentations2014}. The high-level architecture of the ForGAN model is shown in Fig.~\ref{fig:forgan_architecture}.
+ForGAN adds a recurrent layer (Sec.~\ref{sec:rnn}) to $G$ and $D$. The layer processes $c$ as an ordered sequence and constructs a vector representation. The recurrent layer can be an LSTM or a GRU (Sec.~\ref{sec:rnn}). The high-level architecture of the ForGAN model is shown in Fig.~\ref{fig:forgan_architecture}.
 
 \begin{figure}[htbp]
   \centering
