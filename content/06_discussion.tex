@@ -1,5 +1,5 @@
 \section{Discussion}
-\todo{Limitations: a two-return construction was possible from opening and settlement prices but not pursued — returns would need aggregating back to daily for the Monte Carlo, and would mix a traded price with an exchange mark.}
+% \todo{Limitations: a two-return construction was possible from opening and settlement prices but not pursued — returns would need aggregating back to daily for the Monte Carlo, and would mix a traded price with an exchange mark.}
 
 % # Ch5 — Fu et al. (2019) as external support for the distributional failure
 
@@ -117,4 +117,18 @@
 
 % **Citation key:** `fu2019time`
 
-\todo{Since each condition appears once in the data with a single realized target, the empirical conditional distribution is a point mass. \textcite{vuleticFinGANForecastingClassifying2024} note that forecasts close to the target therefore receive high scores from the discriminator, which encourages mode collapse in a classical GAN setup}
+% \todo{Since each condition appears once in the data with a single realized target, the empirical conditional distribution is a point mass. \textcite{vuleticFinGANForecastingClassifying2024} note that forecasts close to the target therefore receive high scores from the discriminator, which encourages mode collapse in a classical GAN setup}
+
+% TODO Ch. 6 limitations: the autocorrelation comparison is limited in
+% two ways. First, neither short split shows a smooth decay
+% (Sec.~\ref{sec:properties-ttf}), so the test split gives no decay
+% shape to compare against; the decay claim rests on the stylized fact
+% of Sec.~\ref{sec:stylized-facts} rather than on the reference column.
+% Second, the direction of the error on option prices cannot be read
+% off the $C_2(\tau)$ table. Volatility clustering slows the
+% convergence of the compounded return distribution to a normal one
+% (Sec.~\ref{sec:stylized-facts}), so it controls how fast the tails
+% thin over the life of the option. Configuration 2 undershoots at
+% $\tau=1$ and overshoots at $\tau=2,5,10$, so whether the multi-day
+% tails end up too fat or too thin depends on the rollout of
+% Sec.~\ref{sec:option-pricing} rather than on the daily statistics.

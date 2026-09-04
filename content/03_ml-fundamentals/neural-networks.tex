@@ -67,17 +67,3 @@ The dimension of the hidden state is called the hidden size of the recurrent lay
 In a recurrent layer, the gradient $\nabla_{\theta}J$ is propagated backward through every step of the sequence. The same parameters $\theta$ are applied at each step, so $\nabla_{\theta}J$ is multiplied by the same factor at each step. As a result, $\nabla_{\theta}J$ can grow without bound or vanish to zero over long sequences. This is commonly called the  vanishing and exploding gradient problem.
 
 The long short-term memory (LSTM) cell \parencite{hochreiterLongShortTermMemory1997} addresses the vanishing and exploding gradient problem. It introduces a memory cell $c^{(t)}$, carried alongside the hidden state. Three gates with entries in $(0, 1)$ control the memory cell. They determine how much of the memory cell is retained, how much of the current input is stored in the memory cell, and how much of the memory cell is passed to the output. The memory cell is updated by addition, so the gradient can flow through many steps without vanishing. The gated recurrent unit (GRU) \parencite{choLearningPhraseRepresentations2014} is a related gated architecture.
-
-\todo{
-   1. why a feedforward network cannot process an ordered sequence - done
-   2. hidden state carried across time steps, final hidden state as a fixed-length vector representation of the sequence - done
-   3. this is what 3.2.3 means by the recurrent layer processing $c$ - done
-   4. vanishing gradients over long sequences, 
-   5. LSTM cell
-   6. state and gates, kept qualitative, cite Hochreiter and Schmidhuber (1997)
-   7. brief GRU mention only, since ForGAN permits it but LSTM is used - done
-}
-%  4. hidden size $R$ as the width of the recurrent layer, tying
-% back to capacity in 2.5.1 and forward to $R_G$ and $R_D$ in 3.2.1
-% 5. 
-% throughout -- forward pointer to 2.6.3 Forward pointer: applied in 2.6.3 and 3.2.1; capacity varied in 3.3.}

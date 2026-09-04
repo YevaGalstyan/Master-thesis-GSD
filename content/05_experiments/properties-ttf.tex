@@ -1,5 +1,14 @@
 \subsection{Properties of the TTF Return Series}\label{sec:properties-ttf}
-Table~\ref{tab:ttf-stats} reports the distributional properties of the TTF return series, full sample and per data split. The statistics are the reference values against which generated returns are compared in the following sections.
+The daily log returns over the full sample are shown in Fig.~\ref{fig:ttf-log-returns}. The three data splits of Sec.~\ref{sec:data-split} are marked.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ttf_log_returns.pdf}
+    \caption{Daily TTF log returns with the train, validation and test splits}
+    \label{fig:ttf-log-returns}
+\end{figure}
+
+Table~\ref{tab:ttf-stats} reports the distributional properties of the TTF return series, full sample and per data split. These statistics are the reference values against which generated returns are compared in the following sections. 
 
 \begin{table}[htbp]
 \centering
@@ -14,10 +23,10 @@ Skewness               &  0.70    &  0.71    &  0.59    &  0.91    \\
 Excess kurtosis        & 14.91    & 19.08    &  2.53    & 13.24    \\
 Minimum                & $-$0.3524 & $-$0.3524 & $-$0.1615 & $-$0.1749 \\
 Maximum                &  0.4128  &  0.4128  &  0.2483  &  0.3229  \\
-1\,\% quantile         & $-$0.1153 & $-$0.1129 & $-$0.1248 & $-$0.1291 \\
-99\,\% quantile        &  0.1239  &  0.1224  &  0.1639  &  0.0885  \\
-$P(|x_t| > 0.05)$      &  0.117   &  0.099   &  0.253   &  0.130   \\
-$P(|x_t| > 0.10)$      &  0.030   &  0.027   &  0.058   &  0.025   \\
+$1\%$ quantile         & $-$0.1153 & $-$0.1129 & $-$0.1248 & $-$0.1291 \\
+$99\%$ quantile        &  0.1239  &  0.1224  &  0.1639  &  0.0885  \\
+$P(|x| > 0.05)$        &  0.117   &  0.099   &  0.253   &  0.130   \\
+$P(|x| > 0.10)$        &  0.030   &  0.027   &  0.058   &  0.025   \\
 \midrule
 $C(1)$                 &  0.033   &  0.067   & $-$0.096 &  0.008   \\
 $C_2(1)$               &  0.364   &  0.392   &  0.128   &  0.288   \\
@@ -36,9 +45,13 @@ $C_2(10)$              &  0.112   &  0.117   &  0.148   &  0.011   \\
 when transition days are excluded. The remaining asymmetry is consistent with the supply disruptions described in
 Sec.~\ref{sec:gas-markets}. Such events raise prices sharply, while no comparable mechanism lowers them. The positive skew is consistent with the right-skewed volatility smile reported for energy markets in Sec.~\ref{sec:implied-vol}.
 
-\textbf{Volatility clustering.} The autocorrelation of returns at $\tau=1$, Eq.~\eqref{eq:autocorrelation}, is \num{0.033} and stays close to 0 across all data splits. The autocorrelation of squared returns, Eq.~\eqref{eq:vol-clustering}, is \num{0.364} at $\tau=1$, and decays slowly, to \num{0.280} at $\tau=2$, \num{0.215} at $\tau=5$ and \num{0.112} at $\tau=10$. The slow decay is the volatility clustering described in Sec.~\ref{sec:stylized-facts}. The autocorrelation of squared returns is strongest in the training split, which contains the 2021 to 2022 crisis, and weakest in the validation split, which does not contain a comparable event.
+\textbf{Volatility clustering.} The autocorrelation of returns at $\tau=1$, Eq.~\eqref{eq:autocorrelation}, is \num{0.033} and stays close to 0 across all data splits. The autocorrelation of squared returns, Eq.~\eqref{eq:vol-clustering}, is \num{0.364} at $\tau=1$, and decays slowly, to \num{0.280} at $\tau=2$, \num{0.215} at $\tau=5$ and \num{0.112} at $\tau=10$. The slow decay is the volatility clustering described in Sec.~\ref{sec:stylized-facts}.
+The training split decays smoothly as well, while the validation and
+test splits do not.
+In the validation split the autocorrelation rises from \num{0.128} at $\tau=1$ to \num{0.206} at $\tau=2$, falls to \num{0.105} at $\tau=5$ and rises again to \num{0.148} at $\tau=10$. In the test split it drops from \num{0.288} to \num{0.061} between $\tau=1$ and $\tau=2$, rises to \num{0.094} at $\tau=5$ and falls to \num{0.011} at $\tau=10$. The training split holds \num{3197} of the \num{3997} observations, so the decay of the full sample follows from the training split.
 
-Table~\ref{tab:test-spike} reports the distributional properties of the full test split and the test split excluding the period from 2026-02-01 to 2026-04-30. The excluded period covers \num{57} of the \num{401} trading days. The excess kurtosis of the remaining days is \num{1.57}, the skewness is \num{-0.06} and the autocorrelation of squared returns at $\tau=1$ is \num{0.042}. Absolute returns exceed \SI{10}{\percent} on \SI{0.6}{\percent} of trading days, compared to \SI{2.5}{\percent} for the full test split. 
+The heavy tails and the volatility clustering of the test split originate in the 2026 disruption described in Sec.~\ref{sec:gas-markets}. The test split is further examined with that period removed. Table~\ref{tab:test-spike} reports the distributional properties of the full test split and the test split excluding the period from 2026-02-01 to 2026-04-30. The excluded period covers \num{57} of the \num{401} trading days.
+
 
 \begin{table}[htbp]
 \centering
@@ -50,12 +63,13 @@ $n$                & 401     & 344 \\
 Standard deviation &  0.0401 &  0.0288 \\
 Skewness           &  0.91   & $-$0.06 \\
 Excess kurtosis    & 13.24   &  1.57 \\
-$P(|x_t| > 0.10)$  &  0.025  &  0.006 \\
+$P(|x| > 0.10)$    &  0.025  &  0.006 \\
 $C_2(1)$           &  0.288  &  0.042 \\
 \bottomrule
 \end{tabular}
 \caption{Test split statistics with and without the 2026 disruption}
 \label{tab:test-spike}
 \end{table}
+ 
 
 When the 2026 disruption is excluded, the test split does not show heavy tails, asymmetry or volatility clustering. The validation split has the highest standard deviation of all splits, and contains no comparable single event. The returns of the validation split are uniformly large, while the returns of the test split are moderate outside a single episode.
